@@ -56,13 +56,13 @@ class ReasonsTableViewController: UITableViewController {
     func saveReasonWithTitle(title: String) {
         let entity =  NSEntityDescription.entityForName("Reason", inManagedObjectContext:managedContext!)
         
-        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Reason
+        let reason = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Reason
         
-        person.title = title
+        reason.title = title
         
         do {
             try managedContext!.save()
-            reasons.append(person)
+            reasons.append(reason)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -74,8 +74,30 @@ class ReasonsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Reason Cell", forIndexPath: indexPath) as! ReasonTableViewCell
-        
+        let reason = reasons[indexPath.row]
+        cell.title.text = reason.title
         return cell
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let reason = reasons[indexPath.row]
+            reasons.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            deleteReason(reason)
+        }
+    }
+    
+    func deleteReason(reason: Reason) {
+        managedContext!.deleteObject(reason)
+        do {
+            try managedContext!.save()
+        } catch let error as NSError  {
+            print("Could not delete \(error), \(error.userInfo)")
+        }
+    }
 }
