@@ -6,7 +6,7 @@
 //  Copyright © 2016 Ricardo Gehrke Filho. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class ReasonsViewController: UITableViewController {
 

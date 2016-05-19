@@ -9,18 +9,9 @@
 import UIKit
 import CoreData
 
-class PeopleViewController: UIViewController, UITableViewDataSource {
+class PeopleViewController: UITableViewController {
     
     var people = [NSManagedObject]()
-    
-    @IBOutlet weak var tableView: UITableView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "\"The List\""
-        tableView.registerClass(UITableViewCell.self,
-                                forCellReuseIdentifier: "Cell")
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,17 +31,16 @@ class PeopleViewController: UIViewController, UITableViewDataSource {
     }
     
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView,
+    override func tableView(tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
         return people.count
     }
     
-    func tableView(tableView: UITableView,
+    override func tableView(tableView: UITableView,
                    cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell =
-            tableView.dequeueReusableCellWithIdentifier("Cell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("Person Cell")
         
         let person = people[indexPath.row]
         
