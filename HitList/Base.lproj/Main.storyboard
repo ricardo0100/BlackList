@@ -39,11 +39,14 @@
         <scene sceneID="ZRd-sn-s79">
             <objects>
                 <tabBarController id="yJm-dU-wcZ" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Pob-XH-xSu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="JRi-aU-71l" kind="relationship" relationship="viewControllers" id="Hha-N5-m54"/>
@@ -57,11 +60,12 @@
         <!--People-->
         <scene sceneID="r9G-wB-BVF">
             <objects>
-                <tableViewController id="QJO-IM-93l" customClass="PeopleViewController" customModule="HitList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QJO-IM-93l" customClass="PeopleViewController" customModule="BlackList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wpU-ZO-Mod">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Person Cell" id="VpO-yt-doE">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
@@ -70,6 +74,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -94,12 +99,20 @@
         <scene sceneID="MV4-HB-dTk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YPY-Gx-PKV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reasons" image="ic_bug_report" id="6UX-8m-99N"/>
+                    <tabBarItem key="tabBarItem" title="Reasons" image="ic_bug_report" id="6UX-8m-99N">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.75686275959014893" blue="0.027450980618596077" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e22-9C-17O">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="e22-9C-17O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -114,12 +127,20 @@
         <scene sceneID="iOx-UB-TGp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRi-aU-71l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="People" image="ic_people" id="V0N-Cg-7rz"/>
+                    <tabBarItem key="tabBarItem" title="People" image="ic_people" id="V0N-Cg-7rz">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.75686275959014893" blue="0.027450980618596077" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0hX-ID-4y8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="0hX-ID-4y8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -44,6 +44,7 @@ class PeopleViewController: UITableViewController {
         
         let person = people[indexPath.row]
         
+        cell!.textLabel!.textColor = UIColor.whiteColor()
         cell!.textLabel!.text = person.valueForKey("name") as? String
         
         return cell!
