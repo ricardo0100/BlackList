@@ -10,9 +10,7 @@ import UIKit
 import CoreData
 
 class PeopleViewController: UITableViewController {
-    
     var managedContext: NSManagedObjectContext?
-    
     var people = [Person]()
     
     override func viewDidLoad() {
@@ -62,7 +60,7 @@ class PeopleViewController: UITableViewController {
     }
 
     @IBAction func addName(sender: AnyObject) {
-        let alert = UIAlertController(title: "New Name", message: "Add a new name", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "New Person", message: "Add a new person name", preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
             let textField = alert.textFields!.first
