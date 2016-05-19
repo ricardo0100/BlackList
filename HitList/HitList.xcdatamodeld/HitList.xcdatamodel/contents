@@ -2,8 +2,14 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
     <entity name="Person" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="reasons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reason" inverseName="people" inverseEntity="Reason" syncable="YES"/>
+    </entity>
+    <entity name="Reason" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="people" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="reasons" inverseEntity="Person" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Person" positionX="-297" positionY="-18" width="128" height="75"/>
+        <element name="Reason" positionX="-54" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

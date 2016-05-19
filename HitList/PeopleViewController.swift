@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource {
+class PeopleViewController: UIViewController, UITableViewDataSource {
     
     var people = [NSManagedObject]()
     
@@ -73,10 +73,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                                         self.tableView.reloadData()
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .Default) { (action: UIAlertAction) -> Void in
-        }
-        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
         alert.addTextFieldWithConfigurationHandler {
             (textField: UITextField) -> Void in
         }
