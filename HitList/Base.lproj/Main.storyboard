@@ -46,28 +46,29 @@
             </objects>
             <point key="canvasLocation" x="1052.5" y="1231.5"/>
         </scene>
-        <!--Reasons Table View Controller-->
+        <!--Reasons-->
         <scene sceneID="0FD-na-km7">
             <objects>
                 <tableViewController id="NRn-Yi-IJ0" customClass="ReasonsTableViewController" customModule="BlackList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wb3-Wh-WCb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wb3-Wh-WCb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reason Cell" rowHeight="70" id="4dY-Vo-gZJ" customClass="ReasonTableViewCell" customModule="BlackList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reason Cell" rowHeight="44" id="4dY-Vo-gZJ" customClass="ReasonTableViewCell" customModule="BlackList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4dY-Vo-gZJ" id="MN6-H6-cxj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_radio_button_unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="gx1-XE-bKz">
-                                            <rect key="frame" x="16" y="23" width="24" height="24"/>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_radio_button_unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="gx1-XE-bKz">
+                                            <rect key="frame" x="16" y="10" width="24" height="24"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep hate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-AS-jl3">
-                                            <rect key="frame" x="56" y="25" width="79" height="21"/>
+                                            <rect key="frame" x="56" y="11" width="79" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -92,11 +93,18 @@
                             <outlet property="delegate" destination="NRn-Yi-IJ0" id="O6C-vJ-ljX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Reasons" id="sLV-BK-TjF">
+                        <barButtonItem key="rightBarButtonItem" title="New reason" id="wHj-bB-1L5">
+                            <connections>
+                                <action selector="newReasonClicked:" destination="NRn-Yi-IJ0" id="2c7-Az-NgN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-1N-cyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572.5" y="1231.5"/>
+            <point key="canvasLocation" x="1540.5" y="1231.5"/>
         </scene>
         <!--People-->
         <scene sceneID="iOx-UB-TGp">

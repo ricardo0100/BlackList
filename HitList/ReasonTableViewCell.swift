@@ -13,17 +13,31 @@ class ReasonTableViewCell: UITableViewCell {
     @IBOutlet weak var radioButton: UIImageView!
     @IBOutlet weak var title: UILabel!
     
+    let selectedRadioImage = UIImage(named: "ic_radio_button_checked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+    let unselectedRadioImage = UIImage(named: "ic_radio_button_unchecked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+    
+    var reasonSelected = false {
+        didSet {
+            if reasonSelected {
+                radioButton.image = selectedRadioImage
+            } else {
+                radioButton.image = unselectedRadioImage
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        radioButton.image = radioButton.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        radioButton.image = unselectedRadioImage
         radioButton.tintColor = UIColor.whiteColor()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ReasonTableViewCell.selectReasonClicked))
+        radioButton.addGestureRecognizer(tapGesture)
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func selectReasonClicked() {
+        reasonSelected = !reasonSelected
     }
 
 }
