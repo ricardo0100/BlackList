@@ -11,7 +11,7 @@ import CoreData
 
 class PeopleViewController: UITableViewController {
     
-    var people = [NSManagedObject]()
+    var people = [Person]()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,7 +24,7 @@ class PeopleViewController: UITableViewController {
         
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
-            people = results as! [NSManagedObject]
+            people = results as! [Person]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -45,7 +45,7 @@ class PeopleViewController: UITableViewController {
         let person = people[indexPath.row]
         
         cell!.textLabel!.textColor = UIColor.whiteColor()
-        cell!.textLabel!.text = person.valueForKey("name") as? String
+        cell!.textLabel!.text = person.name
         
         return cell!
     }
@@ -78,18 +78,15 @@ class PeopleViewController: UITableViewController {
     }
     
     func saveName(name: String) {
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
-        let entity =  NSEntityDescription.entityForName("Person",
-                                                        inManagedObjectContext:managedContext)
+        let entity =  NSEntityDescription.entityForName("Person", inManagedObjectContext:managedContext)
         
-        let person = NSManagedObject(entity: entity!,
-                                     insertIntoManagedObjectContext: managedContext)
+        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Person
         
-        person.setValue(name, forKey: "name")
+        person.name = name
         
         do {
             try managedContext.save()
