@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		BA6D79931CED3E21009C47AF /* ReasonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonsViewController.swift; sourceTree = "<group>"; };
-		BAB444DE1CE5274F0086BC63 /* HitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB444DE1CE5274F0086BC63 /* BlackList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB444E31CE5274F0086BC63 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		BAB444E61CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		BAB444D51CE5274E0086BC63 = {
 			isa = PBXGroup;
 			children = (
-				BAB444E01CE5274F0086BC63 /* HitList */,
+				BAB444E01CE5274F0086BC63 /* BlackList */,
 				BAB444DF1CE5274F0086BC63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		BAB444DF1CE5274F0086BC63 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAB444DE1CE5274F0086BC63 /* HitList.app */,
+				BAB444DE1CE5274F0086BC63 /* BlackList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BAB444E01CE5274F0086BC63 /* HitList */ = {
+		BAB444E01CE5274F0086BC63 /* BlackList */ = {
 			isa = PBXGroup;
 			children = (
 				BAB444E11CE5274F0086BC63 /* AppDelegate.swift */,
@@ -67,15 +67,16 @@
 				BAB444F01CE5274F0086BC63 /* Info.plist */,
 				BAB444E81CE5274F0086BC63 /* HitList.xcdatamodeld */,
 			);
+			name = BlackList;
 			path = HitList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BAB444DD1CE5274E0086BC63 /* HitList */ = {
+		BAB444DD1CE5274E0086BC63 /* BlackList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "HitList" */;
+			buildConfigurationList = BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "BlackList" */;
 			buildPhases = (
 				BAB444DA1CE5274E0086BC63 /* Sources */,
 				BAB444DB1CE5274E0086BC63 /* Frameworks */,
@@ -85,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = HitList;
+			name = BlackList;
 			productName = HitList;
-			productReference = BAB444DE1CE5274F0086BC63 /* HitList.app */;
+			productReference = BAB444DE1CE5274F0086BC63 /* BlackList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "HitList" */;
+			buildConfigurationList = BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "BlackList" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -119,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BAB444DD1CE5274E0086BC63 /* HitList */,
+				BAB444DD1CE5274E0086BC63 /* BlackList */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +262,7 @@
 				INFOPLIST_FILE = HitList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BlackList;
 			};
 			name = Debug;
 		};
@@ -272,14 +273,14 @@
 				INFOPLIST_FILE = HitList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BlackList;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "HitList" */ = {
+		BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "BlackList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BAB444F11CE5274F0086BC63 /* Debug */,
@@ -288,7 +289,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "HitList" */ = {
+		BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "BlackList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BAB444F41CE5274F0086BC63 /* Debug */,

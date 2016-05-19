@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BAB444DD1CE5274E0086BC63"
-               BuildableName = "HitList.app"
-               BlueprintName = "HitList"
-               ReferencedContainer = "container:HitList.xcodeproj">
+               BuildableName = "BlackList.app"
+               BlueprintName = "BlackList"
+               ReferencedContainer = "container:BlackList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BAB444DD1CE5274E0086BC63"
-            BuildableName = "HitList.app"
-            BlueprintName = "HitList"
-            ReferencedContainer = "container:HitList.xcodeproj">
+            BuildableName = "BlackList.app"
+            BlueprintName = "BlackList"
+            ReferencedContainer = "container:BlackList.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BAB444DD1CE5274E0086BC63"
-            BuildableName = "HitList.app"
-            BlueprintName = "HitList"
-            ReferencedContainer = "container:HitList.xcodeproj">
+            BuildableName = "BlackList.app"
+            BlueprintName = "BlackList"
+            ReferencedContainer = "container:BlackList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BAB444DD1CE5274E0086BC63"
-            BuildableName = "HitList.app"
-            BlueprintName = "HitList"
-            ReferencedContainer = "container:HitList.xcodeproj">
+            BuildableName = "BlackList.app"
+            BlueprintName = "BlackList"
+            ReferencedContainer = "container:BlackList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
