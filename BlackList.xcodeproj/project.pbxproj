@@ -82,8 +82,7 @@
 				BA1AEE311CED65B0004615D1 /* Reason+CoreDataProperties.swift */,
 				BA1AEE321CED65B0004615D1 /* Reason.swift */,
 			);
-			name = BlackList;
-			path = HitList;
+			path = BlackList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
