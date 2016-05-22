@@ -14,7 +14,7 @@
 		BA7591E91CF1838000B9788B /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E51CF1838000B9788B /* List+CoreDataProperties.swift */; };
 		BA7591EA1CF1838000B9788B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E61CF1838000B9788B /* List.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
-		BAB444E41CE5274F0086BC63 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* ListsViewController.swift */; };
+		BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */; };
 		BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444E51CE5274F0086BC63 /* Main.storyboard */; };
 		BAB444EA1CE5274F0086BC63 /* HitList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E81CE5274F0086BC63 /* HitList.xcdatamodeld */; };
 		BAB444EC1CE5274F0086BC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB444EB1CE5274F0086BC63 /* Assets.xcassets */; };
@@ -30,7 +30,7 @@
 		BA7591E61CF1838000B9788B /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = List.swift; path = ../List.swift; sourceTree = "<group>"; };
 		BAB444DE1CE5274F0086BC63 /* dooit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dooit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAB444E31CE5274F0086BC63 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
 		BAB444E61CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAB444E91CE5274F0086BC63 /* HitList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HitList.xcdatamodel; sourceTree = "<group>"; };
 		BAB444EB1CE5274F0086BC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB444E11CE5274F0086BC63 /* AppDelegate.swift */,
-				BAB444E31CE5274F0086BC63 /* ListsViewController.swift */,
+				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
 				BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */,
 				BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */,
 				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
@@ -162,7 +162,7 @@
 				BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */,
 				BAB444EA1CE5274F0086BC63 /* HitList.xcdatamodeld in Sources */,
 				BA7591E81CF1838000B9788B /* Item.swift in Sources */,
-				BAB444E41CE5274F0086BC63 /* ListsViewController.swift in Sources */,
+				BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
 				BA7591E91CF1838000B9788B /* List+CoreDataProperties.swift in Sources */,
 				BA7591EA1CF1838000B9788B /* List.swift in Sources */,

@@ -9,14 +9,24 @@
 import UIKit
 import CoreData
 
-class ListsViewController: UITableViewController {
+class ListsTableViewController: UITableViewController {
     var managedContext: NSManagedObjectContext?
     var lists = [List]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
+        
+        let attributedText = NSMutableAttributedString(string: "dooit")
+        attributedText.addAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Avenir-Black", size: 24)!], range: NSRange(location: 0, length: 3))
+        attributedText.addAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Avenir-Light", size: 28)!], range: NSRange(location: 3, length: 2))
+        let titleLabel = UILabel()
+        titleLabel.attributedText = attributedText
+        titleLabel.sizeToFit()
+        
+        navigationItem.titleView = titleLabel
     }
     
     override func viewWillAppear(animated: Bool) {

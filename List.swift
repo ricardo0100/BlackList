@@ -12,7 +12,7 @@ import CoreData
 
 class List: NSManagedObject {
 
-    @NSManaged func addItemsObject(value:Item)
-    @NSManaged func removeItemsObject(value:Item)
+    @NSManaged func addItemsObject(value: Item)
+    @NSManaged func removeItemsObject(value: Item)
 
 }
