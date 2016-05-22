@@ -28,7 +28,7 @@
 		BA1AEE3C1CEF4A9F004615D1 /* Reason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		BA1AEE3D1CEF4A9F004615D1 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BA1AEE3E1CEF4A9F004615D1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		BAB444DE1CE5274F0086BC63 /* BlackList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB444DE1CE5274F0086BC63 /* dooit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dooit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB444E31CE5274F0086BC63 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		BAB444E61CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		BAB444D51CE5274E0086BC63 = {
 			isa = PBXGroup;
 			children = (
-				BAB444E01CE5274F0086BC63 /* BlackList */,
+				BAB444E01CE5274F0086BC63 /* dooit */,
 				BAB444DF1CE5274F0086BC63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,12 +60,12 @@
 		BAB444DF1CE5274F0086BC63 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAB444DE1CE5274F0086BC63 /* BlackList.app */,
+				BAB444DE1CE5274F0086BC63 /* dooit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BAB444E01CE5274F0086BC63 /* BlackList */ = {
+		BAB444E01CE5274F0086BC63 /* dooit */ = {
 			isa = PBXGroup;
 			children = (
 				BAB444E11CE5274F0086BC63 /* AppDelegate.swift */,
@@ -82,15 +82,15 @@
 				BA1AEE3D1CEF4A9F004615D1 /* Person+CoreDataProperties.swift */,
 				BA1AEE3E1CEF4A9F004615D1 /* Person.swift */,
 			);
-			path = BlackList;
+			path = dooit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BAB444DD1CE5274E0086BC63 /* BlackList */ = {
+		BAB444DD1CE5274E0086BC63 /* dooit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "BlackList" */;
+			buildConfigurationList = BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "dooit" */;
 			buildPhases = (
 				BAB444DA1CE5274E0086BC63 /* Sources */,
 				BAB444DB1CE5274E0086BC63 /* Frameworks */,
@@ -100,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = BlackList;
+			name = dooit;
 			productName = HitList;
-			productReference = BAB444DE1CE5274F0086BC63 /* BlackList.app */;
+			productReference = BAB444DE1CE5274F0086BC63 /* dooit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -121,7 +121,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "BlackList" */;
+			buildConfigurationList = BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "dooit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -134,7 +134,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BAB444DD1CE5274E0086BC63 /* BlackList */,
+				BAB444DD1CE5274E0086BC63 /* dooit */,
 			);
 		};
 /* End PBXProject section */
@@ -278,10 +278,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BlackList/Info.plist;
+				INFOPLIST_FILE = dooit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
-				PRODUCT_NAME = BlackList;
+				PRODUCT_NAME = dooit;
 			};
 			name = Debug;
 		};
@@ -289,17 +289,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BlackList/Info.plist;
+				INFOPLIST_FILE = dooit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
-				PRODUCT_NAME = BlackList;
+				PRODUCT_NAME = dooit;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "BlackList" */ = {
+		BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "dooit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BAB444F11CE5274F0086BC63 /* Debug */,
@@ -308,7 +308,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "BlackList" */ = {
+		BAB444F31CE5274F0086BC63 /* Build configuration list for PBXNativeTarget "dooit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BAB444F41CE5274F0086BC63 /* Debug */,
