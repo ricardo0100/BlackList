@@ -16,16 +16,19 @@ class ItemTableViewCell: UITableViewCell {
     let selectedRadioImage = UIImage(named: "ic_radio_button_checked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     let unselectedRadioImage = UIImage(named: "ic_radio_button_unchecked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     
+    var setMarked: ((Item) -> Void)? = nil
+    var setUnmarked: ((Item) -> Void)? = nil
+    
     var item: Item? {
         didSet {
-            reasonSelected = item!.marked
+            marked = item!.marked
             name.text = item!.name
         }
     }
     
-    var reasonSelected = false {
+    var marked = false {
         didSet {
-            if reasonSelected {
+            if marked {
                 radioButton.image = selectedRadioImage
             } else {
                 radioButton.image = unselectedRadioImage
@@ -39,13 +42,17 @@ class ItemTableViewCell: UITableViewCell {
         radioButton.image = unselectedRadioImage
         radioButton.tintColor = UIColor.whiteColor()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ItemTableViewCell.selectReasonClicked))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ItemTableViewCell.radioButtonTaped))
         radioButton.addGestureRecognizer(tapGesture)
     }
     
-    func selectReasonClicked() {
-        reasonSelected = !reasonSelected
-        //TODO: Persist change
+    func radioButtonTaped() {
+        marked = !marked
+        if marked {
+            setMarked!(item!)
+        } else {
+            setUnmarked!(item!)
+        }
     }
 
 }

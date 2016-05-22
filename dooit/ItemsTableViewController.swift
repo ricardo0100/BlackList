@@ -24,14 +24,7 @@ class ItemsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let fetchRequest = NSFetchRequest(entityName: "Item")
-        
-        do {
-            let results = try managedContext!.executeFetchRequest(fetchRequest)
-            items = results as! [Item]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
+        items = Array(list!.items)
     }
     
     @IBAction func newReasonClicked(sender: AnyObject) {
@@ -56,10 +49,10 @@ class ItemsTableViewController: UITableViewController {
     
     func saveItemWithName(name: String) {
         let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:managedContext!)
-        
         let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Item
         
         item.name = name
+        list!.addItemsObject(item)
         
         do {
             try managedContext!.save()
@@ -76,9 +69,30 @@ class ItemsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Item Cell", forIndexPath: indexPath) as! ItemTableViewCell
         let item = items[indexPath.row]
+        
         cell.item = item
+        cell.setMarked = setItemMarked
+        cell.setUnmarked = setItemUnmarked
+        
         return cell
     }
+    
+    func setItemMarked(item: Item) {
+        item.marked = true
+        do {
+            try managedContext!.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    func setItemUnmarked(item: Item) {
+        item.marked = false
+        do {
+            try managedContext!.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }    }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true

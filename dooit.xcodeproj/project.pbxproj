@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */; };
 		BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */; };
-		BA7591DF1CF17C2C00B9788B /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591DB1CF17C2C00B9788B /* List+CoreDataProperties.swift */; };
-		BA7591E01CF17C2C00B9788B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591DC1CF17C2C00B9788B /* List.swift */; };
-		BA7591E11CF17C2C00B9788B /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591DD1CF17C2C00B9788B /* Item+CoreDataProperties.swift */; };
-		BA7591E21CF17C2C00B9788B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591DE1CF17C2C00B9788B /* Item.swift */; };
+		BA7591E71CF1838000B9788B /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E31CF1838000B9788B /* Item+CoreDataProperties.swift */; };
+		BA7591E81CF1838000B9788B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E41CF1838000B9788B /* Item.swift */; };
+		BA7591E91CF1838000B9788B /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E51CF1838000B9788B /* List+CoreDataProperties.swift */; };
+		BA7591EA1CF1838000B9788B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E61CF1838000B9788B /* List.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
 		BAB444E41CE5274F0086BC63 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* ListsViewController.swift */; };
 		BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444E51CE5274F0086BC63 /* Main.storyboard */; };
@@ -24,10 +24,10 @@
 /* Begin PBXFileReference section */
 		BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		BA7591DB1CF17C2C00B9788B /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BA7591DC1CF17C2C00B9788B /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		BA7591DD1CF17C2C00B9788B /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BA7591DE1CF17C2C00B9788B /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BA7591E31CF1838000B9788B /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "../Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA7591E41CF1838000B9788B /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Item.swift; sourceTree = "<group>"; };
+		BA7591E51CF1838000B9788B /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "List+CoreDataProperties.swift"; path = "../List+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA7591E61CF1838000B9788B /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = List.swift; path = ../List.swift; sourceTree = "<group>"; };
 		BAB444DE1CE5274F0086BC63 /* dooit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dooit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB444E31CE5274F0086BC63 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
@@ -77,10 +77,10 @@
 				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
 				BAB444F01CE5274F0086BC63 /* Info.plist */,
 				BAB444E81CE5274F0086BC63 /* HitList.xcdatamodeld */,
-				BA7591DB1CF17C2C00B9788B /* List+CoreDataProperties.swift */,
-				BA7591DC1CF17C2C00B9788B /* List.swift */,
-				BA7591DD1CF17C2C00B9788B /* Item+CoreDataProperties.swift */,
-				BA7591DE1CF17C2C00B9788B /* Item.swift */,
+				BA7591E31CF1838000B9788B /* Item+CoreDataProperties.swift */,
+				BA7591E41CF1838000B9788B /* Item.swift */,
+				BA7591E51CF1838000B9788B /* List+CoreDataProperties.swift */,
+				BA7591E61CF1838000B9788B /* List.swift */,
 			);
 			path = dooit;
 			sourceTree = "<group>";
@@ -157,15 +157,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7591E71CF1838000B9788B /* Item+CoreDataProperties.swift in Sources */,
 				BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */,
-				BA7591E21CF17C2C00B9788B /* Item.swift in Sources */,
-				BA7591DF1CF17C2C00B9788B /* List+CoreDataProperties.swift in Sources */,
-				BA7591E11CF17C2C00B9788B /* Item+CoreDataProperties.swift in Sources */,
-				BA7591E01CF17C2C00B9788B /* List.swift in Sources */,
 				BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */,
 				BAB444EA1CE5274F0086BC63 /* HitList.xcdatamodeld in Sources */,
+				BA7591E81CF1838000B9788B /* Item.swift in Sources */,
 				BAB444E41CE5274F0086BC63 /* ListsViewController.swift in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
+				BA7591E91CF1838000B9788B /* List+CoreDataProperties.swift in Sources */,
+				BA7591EA1CF1838000B9788B /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

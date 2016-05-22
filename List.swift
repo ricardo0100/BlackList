@@ -12,6 +12,7 @@ import CoreData
 
 class List: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    @NSManaged func addItemsObject(value:Item)
+    @NSManaged func removeItemsObject(value:Item)
 
 }

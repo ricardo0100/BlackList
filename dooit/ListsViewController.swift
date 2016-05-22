@@ -107,6 +107,7 @@ class ListsViewController: UITableViewController {
         if segue.identifier == "List Selected" {
             let itemsViewController = segue.destinationViewController as! ItemsTableViewController
             let list = lists[tableView.indexPathForSelectedRow!.row]
+            itemsViewController.title = list.name
             itemsViewController.list = list
         }
     }
