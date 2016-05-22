@@ -5,17 +5,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--People-->
+        <!--Lists-->
         <scene sceneID="r9G-wB-BVF">
             <objects>
-                <tableViewController id="QJO-IM-93l" customClass="PeopleViewController" customModule="BlackList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QJO-IM-93l" customClass="ListsViewController" customModule="dooit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wpU-ZO-Mod">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Person Cell" id="VpO-yt-doE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="List Cell" id="VpO-yt-doE">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VpO-yt-doE" id="uWx-6I-DhL">
@@ -24,7 +24,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="NRn-Yi-IJ0" kind="show" identifier="Person Selected" id="X6q-3C-ReT"/>
+                                    <segue destination="NRn-Yi-IJ0" kind="show" identifier="List Selected" id="X6q-3C-ReT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -33,8 +33,8 @@
                             <outlet property="delegate" destination="QJO-IM-93l" id="lIT-eQ-Y2G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="People" id="okO-wE-daZ">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="VPB-6X-2ai">
+                    <navigationItem key="navigationItem" title="Lists" id="okO-wE-daZ">
+                        <barButtonItem key="rightBarButtonItem" title="New list" id="VPB-6X-2ai">
                             <connections>
                                 <action selector="addName:" destination="QJO-IM-93l" id="7W1-3V-jza"/>
                             </connections>
@@ -46,17 +46,17 @@
             </objects>
             <point key="canvasLocation" x="1052.5" y="1231.5"/>
         </scene>
-        <!--Reasons-->
+        <!--Items-->
         <scene sceneID="0FD-na-km7">
             <objects>
-                <tableViewController id="NRn-Yi-IJ0" customClass="ReasonsTableViewController" customModule="BlackList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NRn-Yi-IJ0" customClass="ItemsTableViewController" customModule="dooit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wb3-Wh-WCb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reason Cell" rowHeight="44" id="4dY-Vo-gZJ" customClass="ReasonTableViewCell" customModule="BlackList" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item Cell" rowHeight="44" id="4dY-Vo-gZJ" customClass="ItemTableViewCell" customModule="dooit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4dY-Vo-gZJ" id="MN6-H6-cxj">
@@ -67,8 +67,8 @@
                                             <rect key="frame" x="16" y="10" width="24" height="24"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep hate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-AS-jl3">
-                                            <rect key="frame" x="56" y="11" width="79" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn KVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-AS-jl3">
+                                            <rect key="frame" x="56" y="11" width="81" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -83,8 +83,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="radioButton" destination="gx1-XE-bKz" id="mIz-0g-d73"/>
-                                    <outlet property="title" destination="Tdh-AS-jl3" id="W4U-yb-rqM"/>
+                                    <outlet property="name" destination="Tdh-AS-jl3" id="Obl-iy-1KO"/>
+                                    <outlet property="radioButton" destination="gx1-XE-bKz" id="HZ8-89-8yn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,8 +93,8 @@
                             <outlet property="delegate" destination="NRn-Yi-IJ0" id="O6C-vJ-ljX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reasons" id="sLV-BK-TjF">
-                        <barButtonItem key="rightBarButtonItem" title="New reason" id="wHj-bB-1L5">
+                    <navigationItem key="navigationItem" title="Items" id="sLV-BK-TjF">
+                        <barButtonItem key="rightBarButtonItem" title="New item" id="wHj-bB-1L5">
                             <connections>
                                 <action selector="newReasonClicked:" destination="NRn-Yi-IJ0" id="2c7-Az-NgN"/>
                             </connections>
@@ -110,7 +110,7 @@
         <scene sceneID="iOx-UB-TGp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRi-aU-71l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="People" image="ic_people" id="V0N-Cg-7rz">
+                    <tabBarItem key="tabBarItem" title="People" id="V0N-Cg-7rz">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="1" green="0.75686275959014893" blue="0.027450980618596077" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,7 +136,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_people" width="24" height="24"/>
         <image name="ic_radio_button_unchecked" width="24" height="24"/>
     </resources>
 </document>

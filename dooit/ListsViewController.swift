@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class PeopleViewController: UITableViewController {
+class ListsViewController: UITableViewController {
     var managedContext: NSManagedObjectContext?
-    var people = [Person]()
+    var lists = [List]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,26 +22,26 @@ class PeopleViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let fetchRequest = NSFetchRequest(entityName: "Person")
+        let fetchRequest = NSFetchRequest(entityName: "List")
         
         do {
             let results = try managedContext!.executeFetchRequest(fetchRequest)
-            people = results as! [Person]
+            lists = results as! [List]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people.count
+        return lists.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Person Cell")
-        let person = people[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("List Cell")
+        let list = lists[indexPath.row]
         
         cell!.textLabel!.textColor = UIColor.whiteColor()
-        cell!.textLabel!.text = person.name
+        cell!.textLabel!.text = list.name
         
         return cell!
     }
@@ -52,19 +52,19 @@ class PeopleViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let person = people[indexPath.row]
-            people.removeAtIndex(indexPath.row)
+            let person = lists[indexPath.row]
+            lists.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            deletePerson(person)
+            deleteList(person)
         }
     }
 
     @IBAction func addName(sender: AnyObject) {
-        let alert = UIAlertController(title: "New Person", message: "Add a new person name", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "New List", message: "Add a new list name", preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
             let textField = alert.textFields!.first
-            self.savePersonWithName(textField!.text!)
+            self.saveListWithName(textField!.text!)
             self.tableView.reloadData()
         })
         
@@ -79,22 +79,22 @@ class PeopleViewController: UITableViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    func savePersonWithName(name: String) {
-        let entity =  NSEntityDescription.entityForName("Person", inManagedObjectContext:managedContext!)
+    func saveListWithName(name: String) {
+        let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedContext!)
         
-        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Person
+        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! List
         
         person.name = name
         
         do {
             try managedContext!.save()
-            people.append(person)
+            lists.append(person)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
     
-    func deletePerson(person: Person) {
+    func deleteList(person: List) {
         managedContext!.deleteObject(person)
         do {
             try managedContext!.save()
@@ -104,10 +104,10 @@ class PeopleViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Person Selected" {
-            let reasonsViewController = segue.destinationViewController as! ReasonsTableViewController
-            let person = people[tableView.indexPathForSelectedRow!.row]
-            reasonsViewController.person = person
+        if segue.identifier == "List Selected" {
+            let itemsViewController = segue.destinationViewController as! ItemsTableViewController
+            let list = lists[tableView.indexPathForSelectedRow!.row]
+            itemsViewController.list = list
         }
     }
 }

@@ -8,18 +8,20 @@
 
 import UIKit
 
-class ReasonTableViewCell: UITableViewCell {
+class ItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var radioButton: UIImageView!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var name: UILabel!
     
     let selectedRadioImage = UIImage(named: "ic_radio_button_checked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     let unselectedRadioImage = UIImage(named: "ic_radio_button_unchecked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     
-    var reason: Reason?
-    
-    var addReasonToPersonCallback: ((Reason) -> Void)? = nil
-    var removeReasonToPersonCallback: ((Reason) -> Void)? = nil
+    var item: Item? {
+        didSet {
+            reasonSelected = item!.marked
+            name.text = item!.name
+        }
+    }
     
     var reasonSelected = false {
         didSet {
@@ -37,18 +39,13 @@ class ReasonTableViewCell: UITableViewCell {
         radioButton.image = unselectedRadioImage
         radioButton.tintColor = UIColor.whiteColor()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ReasonTableViewCell.selectReasonClicked))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ItemTableViewCell.selectReasonClicked))
         radioButton.addGestureRecognizer(tapGesture)
     }
     
     func selectReasonClicked() {
         reasonSelected = !reasonSelected
-        if reasonSelected {
-            addReasonToPersonCallback!(reason!)
-        } else {
-            removeReasonToPersonCallback!(reason!)
-        }
-        
+        //TODO: Persist change
     }
 
 }

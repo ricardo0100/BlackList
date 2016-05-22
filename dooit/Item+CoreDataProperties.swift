@@ -1,8 +1,8 @@
 //
-//  Person+CoreDataProperties.swift
-//  BlackList
+//  Item+CoreDataProperties.swift
+//  dooit
 //
-//  Created by Ricardo Gehrke Filho on 20/05/16.
+//  Created by Ricardo Gehrke Filho on 22/05/16.
 //  Copyright © 2016 Ricardo Gehrke Filho. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,11 +12,10 @@
 import Foundation
 import CoreData
 
-extension Person {
+extension Item {
 
     @NSManaged var name: String?
-    @NSManaged var reasons: NSSet?
+    @NSManaged var marked: Bool
+    @NSManaged var list: List?
 
-    @NSManaged func addReasonsObject(value: Reason)
-    @NSManaged func removeReasonsObject(value: Reason)
 }

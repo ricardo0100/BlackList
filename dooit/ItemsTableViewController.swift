@@ -9,12 +9,11 @@
 import UIKit
 import CoreData
 
-class ReasonsTableViewController: UITableViewController {
+class ItemsTableViewController: UITableViewController {
     
-    var person: Person?
+    var list: List?
     var managedContext: NSManagedObjectContext?
-    var personReasons = [Reason]()
-    var reasons = [Reason]()
+    var items = [Item]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,22 +24,22 @@ class ReasonsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let fetchRequest = NSFetchRequest(entityName: "Reason")
+        let fetchRequest = NSFetchRequest(entityName: "Item")
         
         do {
             let results = try managedContext!.executeFetchRequest(fetchRequest)
-            reasons = results as! [Reason]
+            items = results as! [Item]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
     }
     
     @IBAction func newReasonClicked(sender: AnyObject) {
-        let alert = UIAlertController(title: "New Reason", message: "Add a new reason", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "New Item", message: "Add a new item", preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
             let textField = alert.textFields!.first
-            self.saveReasonWithTitle(textField!.text!)
+            self.saveItemWithName(textField!.text!)
             self.tableView.reloadData()
         })
         
@@ -55,36 +54,29 @@ class ReasonsTableViewController: UITableViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    func saveReasonWithTitle(title: String) {
-        let entity =  NSEntityDescription.entityForName("Reason", inManagedObjectContext:managedContext!)
+    func saveItemWithName(name: String) {
+        let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:managedContext!)
         
-        let reason = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Reason
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Item
         
-        reason.title = title
+        item.name = name
         
         do {
             try managedContext!.save()
-            reasons.append(reason)
+            items.append(item)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reasons.count
+        return items.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Reason Cell", forIndexPath: indexPath) as! ReasonTableViewCell
-        let reason = reasons[indexPath.row]
-        
-        cell.addReasonToPersonCallback = addReasonCallback
-        cell.removeReasonToPersonCallback = removeReasonCallback
-        
-        cell.reasonSelected = person!.reasons!.containsObject(reason)
-        cell.reason = reason
-        cell.title.text = reason.title
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Item Cell", forIndexPath: indexPath) as! ItemTableViewCell
+        let item = items[indexPath.row]
+        cell.item = item
         return cell
     }
     
@@ -94,28 +86,20 @@ class ReasonsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let reason = reasons[indexPath.row]
+            let item = items[indexPath.row]
 
-            reasons.removeAtIndex(indexPath.row)
+            items.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            deleteReason(reason)
+            deleteItem(item)
         }
     }
     
-    func deleteReason(reason: Reason) {
-        managedContext!.deleteObject(reason)
+    func deleteItem(item: Item) {
+        managedContext!.deleteObject(item)
         do {
             try managedContext!.save()
         } catch let error as NSError  {
             print("Could not delete \(error), \(error.userInfo)")
         }
-    }
-    
-    func addReasonCallback(reason: Reason) {
-        person?.addReasonsObject(reason)
-    }
-    
-    func removeReasonCallback(reason: Reason) {
-        person?.removeReasonsObject(reason)
     }
 }
