@@ -102,5 +102,13 @@ class PeopleViewController: UITableViewController {
             print("Could not delete \(error), \(error.userInfo)")
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Person Selected" {
+            let reasonsViewController = segue.destinationViewController as! ReasonsTableViewController
+            let person = people[tableView.indexPathForSelectedRow!.row]
+            reasonsViewController.person = person
+        }
+    }
 }
 

@@ -16,6 +16,11 @@ class ReasonTableViewCell: UITableViewCell {
     let selectedRadioImage = UIImage(named: "ic_radio_button_checked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     let unselectedRadioImage = UIImage(named: "ic_radio_button_unchecked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     
+    var reason: Reason?
+    
+    var addReasonToPersonCallback: ((Reason) -> Void)? = nil
+    var removeReasonToPersonCallback: ((Reason) -> Void)? = nil
+    
     var reasonSelected = false {
         didSet {
             if reasonSelected {
@@ -38,6 +43,12 @@ class ReasonTableViewCell: UITableViewCell {
     
     func selectReasonClicked() {
         reasonSelected = !reasonSelected
+        if reasonSelected {
+            addReasonToPersonCallback!(reason!)
+        } else {
+            removeReasonToPersonCallback!(reason!)
+        }
+        
     }
 
 }

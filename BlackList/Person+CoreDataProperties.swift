@@ -2,7 +2,7 @@
 //  Person+CoreDataProperties.swift
 //  BlackList
 //
-//  Created by Ricardo Gehrke Filho on 19/05/16.
+//  Created by Ricardo Gehrke Filho on 20/05/16.
 //  Copyright © 2016 Ricardo Gehrke Filho. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,6 +15,8 @@ import CoreData
 extension Person {
 
     @NSManaged var name: String?
-    @NSManaged var reasons: NSManagedObject?
+    @NSManaged var reasons: NSSet?
 
+    @NSManaged func addReasonsObject(value: Reason)
+    @NSManaged func removeReasonsObject(value: Reason)
 }

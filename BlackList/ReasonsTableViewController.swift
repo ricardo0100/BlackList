@@ -11,7 +11,9 @@ import CoreData
 
 class ReasonsTableViewController: UITableViewController {
     
+    var person: Person?
     var managedContext: NSManagedObjectContext?
+    var personReasons = [Reason]()
     var reasons = [Reason]()
 
     override func viewDidLoad() {
@@ -75,7 +77,14 @@ class ReasonsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Reason Cell", forIndexPath: indexPath) as! ReasonTableViewCell
         let reason = reasons[indexPath.row]
+        
+        cell.addReasonToPersonCallback = addReasonCallback
+        cell.removeReasonToPersonCallback = removeReasonCallback
+        
+        cell.reasonSelected = person!.reasons!.containsObject(reason)
+        cell.reason = reason
         cell.title.text = reason.title
+        
         return cell
     }
     
@@ -86,6 +95,7 @@ class ReasonsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             let reason = reasons[indexPath.row]
+
             reasons.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             deleteReason(reason)
@@ -99,5 +109,13 @@ class ReasonsTableViewController: UITableViewController {
         } catch let error as NSError  {
             print("Could not delete \(error), \(error.userInfo)")
         }
+    }
+    
+    func addReasonCallback(reason: Reason) {
+        person?.addReasonsObject(reason)
+    }
+    
+    func removeReasonCallback(reason: Reason) {
+        person?.removeReasonsObject(reason)
     }
 }

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA1AEE331CED65B0004615D1 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE2F1CED65B0004615D1 /* Person+CoreDataProperties.swift */; };
-		BA1AEE341CED65B0004615D1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE301CED65B0004615D1 /* Person.swift */; };
-		BA1AEE351CED65B0004615D1 /* Reason+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE311CED65B0004615D1 /* Reason+CoreDataProperties.swift */; };
-		BA1AEE361CED65B0004615D1 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE321CED65B0004615D1 /* Reason.swift */; };
 		BA1AEE381CED70B6004615D1 /* ReasonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE371CED70B6004615D1 /* ReasonsTableViewController.swift */; };
 		BA1AEE3A1CED70EB004615D1 /* ReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ReasonTableViewCell.swift */; };
+		BA1AEE3F1CEF4A9F004615D1 /* Reason+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE3B1CEF4A9F004615D1 /* Reason+CoreDataProperties.swift */; };
+		BA1AEE401CEF4A9F004615D1 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE3C1CEF4A9F004615D1 /* Reason.swift */; };
+		BA1AEE411CEF4A9F004615D1 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE3D1CEF4A9F004615D1 /* Person+CoreDataProperties.swift */; };
+		BA1AEE421CEF4A9F004615D1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE3E1CEF4A9F004615D1 /* Person.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
 		BAB444E41CE5274F0086BC63 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* PeopleViewController.swift */; };
 		BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444E51CE5274F0086BC63 /* Main.storyboard */; };
@@ -22,12 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA1AEE2F1CED65B0004615D1 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BA1AEE301CED65B0004615D1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		BA1AEE311CED65B0004615D1 /* Reason+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reason+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BA1AEE321CED65B0004615D1 /* Reason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		BA1AEE371CED70B6004615D1 /* ReasonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonsTableViewController.swift; sourceTree = "<group>"; };
 		BA1AEE391CED70EB004615D1 /* ReasonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonTableViewCell.swift; sourceTree = "<group>"; };
+		BA1AEE3B1CEF4A9F004615D1 /* Reason+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reason+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA1AEE3C1CEF4A9F004615D1 /* Reason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
+		BA1AEE3D1CEF4A9F004615D1 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA1AEE3E1CEF4A9F004615D1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		BAB444DE1CE5274F0086BC63 /* BlackList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB444E31CE5274F0086BC63 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -77,10 +77,10 @@
 				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
 				BAB444F01CE5274F0086BC63 /* Info.plist */,
 				BAB444E81CE5274F0086BC63 /* HitList.xcdatamodeld */,
-				BA1AEE2F1CED65B0004615D1 /* Person+CoreDataProperties.swift */,
-				BA1AEE301CED65B0004615D1 /* Person.swift */,
-				BA1AEE311CED65B0004615D1 /* Reason+CoreDataProperties.swift */,
-				BA1AEE321CED65B0004615D1 /* Reason.swift */,
+				BA1AEE3B1CEF4A9F004615D1 /* Reason+CoreDataProperties.swift */,
+				BA1AEE3C1CEF4A9F004615D1 /* Reason.swift */,
+				BA1AEE3D1CEF4A9F004615D1 /* Person+CoreDataProperties.swift */,
+				BA1AEE3E1CEF4A9F004615D1 /* Person.swift */,
 			);
 			path = BlackList;
 			sourceTree = "<group>";
@@ -157,15 +157,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1AEE341CED65B0004615D1 /* Person.swift in Sources */,
-				BA1AEE351CED65B0004615D1 /* Reason+CoreDataProperties.swift in Sources */,
 				BA1AEE381CED70B6004615D1 /* ReasonsTableViewController.swift in Sources */,
-				BA1AEE331CED65B0004615D1 /* Person+CoreDataProperties.swift in Sources */,
 				BA1AEE3A1CED70EB004615D1 /* ReasonTableViewCell.swift in Sources */,
 				BAB444EA1CE5274F0086BC63 /* HitList.xcdatamodeld in Sources */,
+				BA1AEE3F1CEF4A9F004615D1 /* Reason+CoreDataProperties.swift in Sources */,
+				BA1AEE411CEF4A9F004615D1 /* Person+CoreDataProperties.swift in Sources */,
 				BAB444E41CE5274F0086BC63 /* PeopleViewController.swift in Sources */,
+				BA1AEE421CEF4A9F004615D1 /* Person.swift in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
-				BA1AEE361CED65B0004615D1 /* Reason.swift in Sources */,
+				BA1AEE401CEF4A9F004615D1 /* Reason.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HitList/Info.plist;
+				INFOPLIST_FILE = BlackList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
 				PRODUCT_NAME = BlackList;
@@ -289,7 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HitList/Info.plist;
+				INFOPLIST_FILE = BlackList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
 				PRODUCT_NAME = BlackList;

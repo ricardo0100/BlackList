@@ -24,7 +24,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="NRn-Yi-IJ0" kind="show" id="X6q-3C-ReT"/>
+                                    <segue destination="NRn-Yi-IJ0" kind="show" identifier="Person Selected" id="X6q-3C-ReT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
