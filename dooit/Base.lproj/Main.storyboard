@@ -96,7 +96,7 @@
                     <navigationItem key="navigationItem" title="Items" id="sLV-BK-TjF">
                         <barButtonItem key="rightBarButtonItem" title="New item" id="wHj-bB-1L5">
                             <connections>
-                                <action selector="newReasonClicked:" destination="NRn-Yi-IJ0" id="2c7-Az-NgN"/>
+                                <action selector="newItemClicked:" destination="NRn-Yi-IJ0" id="BTt-aT-tft"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

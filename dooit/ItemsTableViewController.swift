@@ -13,21 +13,56 @@ class ItemsTableViewController: UITableViewController {
     
     var list: List?
     var managedContext: NSManagedObjectContext?
-    var items = [Item]()
+    var items: [Item] = []
+    
+    // MARK: - UIViewController Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpCoreData()
+    }
+    
+    func setUpCoreData() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        items = Array(list!.items)
+        fetchItems()
     }
     
-    @IBAction func newReasonClicked(sender: AnyObject) {
+    // MARK: - UITableView DataSource
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Item Cell", forIndexPath: indexPath) as! ItemTableViewCell
+        let item = items[indexPath.row]
+        cell.item = item
+        cell.setMarked = setItemMarked
+        cell.setUnmarked = setItemUnmarked
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let item = items[indexPath.row]
+            items.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            deleteItem(item)
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func newItemClicked(sender: AnyObject) {
         let alert = UIAlertController(title: "New Item", message: "Add a new item", preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
@@ -47,6 +82,12 @@ class ItemsTableViewController: UITableViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Core Data
+    
+    func fetchItems() {
+        items = Array(list!.items)
+    }
+    
     func saveItemWithName(name: String) {
         let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:managedContext!)
         let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Item
@@ -60,21 +101,6 @@ class ItemsTableViewController: UITableViewController {
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Item Cell", forIndexPath: indexPath) as! ItemTableViewCell
-        let item = items[indexPath.row]
-        
-        cell.item = item
-        cell.setMarked = setItemMarked
-        cell.setUnmarked = setItemUnmarked
-        
-        return cell
     }
     
     func setItemMarked(item: Item) {
@@ -92,19 +118,6 @@ class ItemsTableViewController: UITableViewController {
             try managedContext!.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
-        }    }
-    
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            let item = items[indexPath.row]
-
-            items.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            deleteItem(item)
         }
     }
     
