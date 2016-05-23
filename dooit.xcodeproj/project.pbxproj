@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */; };
 		BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */; };
-		BA7591E71CF1838000B9788B /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E31CF1838000B9788B /* Item+CoreDataProperties.swift */; };
-		BA7591E81CF1838000B9788B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E41CF1838000B9788B /* Item.swift */; };
-		BA7591E91CF1838000B9788B /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E51CF1838000B9788B /* List+CoreDataProperties.swift */; };
-		BA7591EA1CF1838000B9788B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7591E61CF1838000B9788B /* List.swift */; };
+		BA5578301CF3694E006953F1 /* dooit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA55782E1CF3694E006953F1 /* dooit.xcdatamodeld */; };
+		BA55783D1CF369FE006953F1 /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578391CF369FE006953F1 /* List+CoreDataProperties.swift */; };
+		BA55783E1CF369FE006953F1 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783A1CF369FE006953F1 /* List.swift */; };
+		BA55783F1CF369FE006953F1 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */; };
+		BA5578401CF369FE006953F1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783C1CF369FE006953F1 /* Item.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
 		BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */; };
 		BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444E51CE5274F0086BC63 /* Main.storyboard */; };
-		BAB444EA1CE5274F0086BC63 /* HitList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E81CE5274F0086BC63 /* HitList.xcdatamodeld */; };
 		BAB444EC1CE5274F0086BC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB444EB1CE5274F0086BC63 /* Assets.xcassets */; };
 		BAB444EF1CE5274F0086BC63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -24,15 +24,15 @@
 /* Begin PBXFileReference section */
 		BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		BA7591E31CF1838000B9788B /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BA7591E41CF1838000B9788B /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		BA7591E51CF1838000B9788B /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BA7591E61CF1838000B9788B /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		BA55782F1CF3694E006953F1 /* dooit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dooit.xcdatamodel; sourceTree = "<group>"; };
+		BA5578391CF369FE006953F1 /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA55783A1CF369FE006953F1 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA55783C1CF369FE006953F1 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BAB444DE1CE5274F0086BC63 /* dooit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dooit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
 		BAB444E61CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BAB444E91CE5274F0086BC63 /* HitList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HitList.xcdatamodel; sourceTree = "<group>"; };
 		BAB444EB1CE5274F0086BC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAB444EE1CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAB444F01CE5274F0086BC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,11 +52,11 @@
 		BA2299281CF30A030044A6D0 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				BAB444E81CE5274F0086BC63 /* HitList.xcdatamodeld */,
-				BA7591E31CF1838000B9788B /* Item+CoreDataProperties.swift */,
-				BA7591E41CF1838000B9788B /* Item.swift */,
-				BA7591E51CF1838000B9788B /* List+CoreDataProperties.swift */,
-				BA7591E61CF1838000B9788B /* List.swift */,
+				BA55782E1CF3694E006953F1 /* dooit.xcdatamodeld */,
+				BA5578391CF369FE006953F1 /* List+CoreDataProperties.swift */,
+				BA55783A1CF369FE006953F1 /* List.swift */,
+				BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */,
+				BA55783C1CF369FE006953F1 /* Item.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			dependencies = (
 			);
 			name = dooit;
-			productName = HitList;
+			productName = dooit;
 			productReference = BAB444DE1CE5274F0086BC63 /* dooit.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -174,15 +174,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA7591E71CF1838000B9788B /* Item+CoreDataProperties.swift in Sources */,
+				BA5578301CF3694E006953F1 /* dooit.xcdatamodeld in Sources */,
+				BA5578401CF369FE006953F1 /* Item.swift in Sources */,
+				BA55783D1CF369FE006953F1 /* List+CoreDataProperties.swift in Sources */,
+				BA55783F1CF369FE006953F1 /* Item+CoreDataProperties.swift in Sources */,
+				BA55783E1CF369FE006953F1 /* List.swift in Sources */,
 				BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */,
 				BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */,
-				BAB444EA1CE5274F0086BC63 /* HitList.xcdatamodeld in Sources */,
-				BA7591E81CF1838000B9788B /* Item.swift in Sources */,
 				BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
-				BA7591E91CF1838000B9788B /* List+CoreDataProperties.swift in Sources */,
-				BA7591EA1CF1838000B9788B /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = dooit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.dooit;
 				PRODUCT_NAME = dooit;
 			};
 			name = Debug;
@@ -308,7 +308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = dooit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.HitList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.dooit;
 				PRODUCT_NAME = dooit;
 			};
 			name = Release;
@@ -337,13 +337,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BAB444E81CE5274F0086BC63 /* HitList.xcdatamodeld */ = {
+		BA55782E1CF3694E006953F1 /* dooit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BAB444E91CE5274F0086BC63 /* HitList.xcdatamodel */,
+				BA55782F1CF3694E006953F1 /* dooit.xcdatamodel */,
 			);
-			currentVersion = BAB444E91CE5274F0086BC63 /* HitList.xcdatamodel */;
-			path = HitList.xcdatamodeld;
+			currentVersion = BA55782F1CF3694E006953F1 /* dooit.xcdatamodel */;
+			path = dooit.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
