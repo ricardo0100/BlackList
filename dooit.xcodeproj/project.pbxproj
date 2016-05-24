@@ -190,7 +190,6 @@
 					};
 					BAB444DD1CE5274E0086BC63 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2T9EKFYB5P;
 					};
 				};
 			};
