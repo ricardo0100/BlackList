@@ -2,3 +2,4 @@ language: objective-c
 osx_image: xcode7.3
 xcode_project: dooit.xcodeproj
 xcode_scheme: dooit
+xcode_sdk: iphonesimulator
