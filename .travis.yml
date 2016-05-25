@@ -6,3 +6,5 @@ xcode_sdk: iphonesimulator
 script: set -o pipefail && xcodebuild test -project $TRAVIS_XCODE_PROJECT -scheme $TRAVIS_XCODE_SCHEME -sdk $TRAVIS_XCODE_SDK | xcpretty
 notifications:
   email: false
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
