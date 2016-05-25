@@ -14,7 +14,14 @@
 		BA55783E1CF369FE006953F1 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783A1CF369FE006953F1 /* List.swift */; };
 		BA55783F1CF369FE006953F1 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */; };
 		BA5578401CF369FE006953F1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783C1CF369FE006953F1 /* Item.swift */; };
-		BA5578491CF3EBD4006953F1 /* dooitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578481CF3EBD4006953F1 /* dooitTests.swift */; };
+		BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */; };
+		BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578511CF55981006953F1 /* ShowListsViewModel.swift */; };
+		BA5578551CF56016006953F1 /* ShowListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578511CF55981006953F1 /* ShowListsViewModel.swift */; };
+		BA5578561CF5602F006953F1 /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578391CF369FE006953F1 /* List+CoreDataProperties.swift */; };
+		BA5578571CF5602F006953F1 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783A1CF369FE006953F1 /* List.swift */; };
+		BA5578581CF5602F006953F1 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */; };
+		BA5578591CF5602F006953F1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55783C1CF369FE006953F1 /* Item.swift */; };
+		BA55785C1CF56220006953F1 /* ShowListsViewModelDelegateDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55785A1CF56162006953F1 /* ShowListsViewModelDelegateDouble.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
 		BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */; };
 		BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444E51CE5274F0086BC63 /* Main.storyboard */; };
@@ -41,8 +48,10 @@
 		BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BA55783C1CF369FE006953F1 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BA5578461CF3EBD3006953F1 /* dooitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dooitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA5578481CF3EBD4006953F1 /* dooitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dooitTests.swift; sourceTree = "<group>"; };
+		BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelTests.swift; sourceTree = "<group>"; };
 		BA55784A1CF3EBD4006953F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA5578511CF55981006953F1 /* ShowListsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowListsViewModel.swift; path = ViewModel/ShowListsViewModel.swift; sourceTree = "<group>"; };
+		BA55785A1CF56162006953F1 /* ShowListsViewModelDelegateDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelDelegateDouble.swift; sourceTree = "<group>"; };
 		BAB444DE1CE5274F0086BC63 /* dooit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dooit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
@@ -94,11 +103,20 @@
 		BA5578471CF3EBD4006953F1 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BA5578481CF3EBD4006953F1 /* dooitTests.swift */,
+				BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */,
+				BA55785A1CF56162006953F1 /* ShowListsViewModelDelegateDouble.swift */,
 				BA55784A1CF3EBD4006953F1 /* Info.plist */,
 			);
 			name = "Unit Tests";
 			path = dooitTests;
+			sourceTree = "<group>";
+		};
+		BA5578501CF55760006953F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5578511CF55981006953F1 /* ShowListsViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		BAB444D51CE5274E0086BC63 = {
@@ -122,6 +140,7 @@
 		BAB444E01CE5274F0086BC63 /* App Code */ = {
 			isa = PBXGroup;
 			children = (
+				BA5578501CF55760006953F1 /* ViewModel */,
 				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
 				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
 				BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */,
@@ -237,7 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA5578491CF3EBD4006953F1 /* dooitTests.swift in Sources */,
+				BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */,
+				BA5578571CF5602F006953F1 /* List.swift in Sources */,
+				BA55785C1CF56220006953F1 /* ShowListsViewModelDelegateDouble.swift in Sources */,
+				BA5578561CF5602F006953F1 /* List+CoreDataProperties.swift in Sources */,
+				BA5578551CF56016006953F1 /* ShowListsViewModel.swift in Sources */,
+				BA5578591CF5602F006953F1 /* Item.swift in Sources */,
+				BA5578581CF5602F006953F1 /* Item+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA5578301CF3694E006953F1 /* dooit.xcdatamodeld in Sources */,
+				BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */,
 				BA5578401CF369FE006953F1 /* Item.swift in Sources */,
 				BA55783D1CF369FE006953F1 /* List+CoreDataProperties.swift in Sources */,
 				BA55783F1CF369FE006953F1 /* Item+CoreDataProperties.swift in Sources */,
