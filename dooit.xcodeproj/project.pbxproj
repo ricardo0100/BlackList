@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
-		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = View/ItemsTableViewController.swift; sourceTree = "<group>"; };
+		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		BA55782F1CF3694E006953F1 /* dooit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dooit.xcdatamodel; sourceTree = "<group>"; };
 		BA5578391CF369FE006953F1 /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BA55783A1CF369FE006953F1 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -54,9 +54,9 @@
 		BA55785A1CF56162006953F1 /* ShowListsViewModelDelegateDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelDelegateDouble.swift; sourceTree = "<group>"; };
 		BAB444DE1CE5274F0086BC63 /* dooit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dooit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
+		BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListsTableViewController.swift; path = View/ListsTableViewController.swift; sourceTree = "<group>"; };
 		BAB444E61CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BAB444EB1CE5274F0086BC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAB444EB1CE5274F0086BC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = View/Assets.xcassets; sourceTree = "<group>"; };
 		BAB444EE1CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAB444F01CE5274F0086BC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,16 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BA2299281CF30A030044A6D0 /* Core Data */ = {
+		BA2299281CF30A030044A6D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BA55782E1CF3694E006953F1 /* dooit.xcdatamodeld */,
-				BA5578391CF369FE006953F1 /* List+CoreDataProperties.swift */,
+				BA55785E1CF681E8006953F1 /* Data Model */,
 				BA55783A1CF369FE006953F1 /* List.swift */,
-				BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */,
 				BA55783C1CF369FE006953F1 /* Item.swift */,
 			);
-			name = "Core Data";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BA2299291CF30A4F0044A6D0 /* Support Files */ = {
@@ -119,6 +117,29 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		BA55785D1CF67FEC006953F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
+				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
+				BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */,
+				BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */,
+				BAB444EB1CE5274F0086BC63 /* Assets.xcassets */,
+				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BA55785E1CF681E8006953F1 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA55782E1CF3694E006953F1 /* dooit.xcdatamodeld */,
+				BA5578391CF369FE006953F1 /* List+CoreDataProperties.swift */,
+				BA55783B1CF369FE006953F1 /* Item+CoreDataProperties.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 		BAB444D51CE5274E0086BC63 = {
 			isa = PBXGroup;
 			children = (
@@ -140,14 +161,9 @@
 		BAB444E01CE5274F0086BC63 /* App Code */ = {
 			isa = PBXGroup;
 			children = (
+				BA55785D1CF67FEC006953F1 /* View */,
 				BA5578501CF55760006953F1 /* ViewModel */,
-				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
-				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
-				BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */,
-				BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */,
-				BAB444EB1CE5274F0086BC63 /* Assets.xcassets */,
-				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
-				BA2299281CF30A030044A6D0 /* Core Data */,
+				BA2299281CF30A030044A6D0 /* Model */,
 				BA2299291CF30A4F0044A6D0 /* Support Files */,
 			);
 			name = "App Code";
@@ -300,6 +316,7 @@
 				BAB444E61CE5274F0086BC63 /* Base */,
 			);
 			name = Main.storyboard;
+			path = View;
 			sourceTree = "<group>";
 		};
 		BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */ = {
@@ -308,6 +325,7 @@
 				BAB444EE1CE5274F0086BC63 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -454,6 +472,7 @@
 				BA55784F1CF3EBD4006953F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAB444D91CE5274E0086BC63 /* Build configuration list for PBXProject "dooit" */ = {
 			isa = XCConfigurationList;
