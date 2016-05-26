@@ -95,7 +95,7 @@
 				BAB444E11CE5274F0086BC63 /* AppDelegate.swift */,
 				BAB444F01CE5274F0086BC63 /* Info.plist */,
 			);
-			name = "Support Files";
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		BA5578471CF3EBD4006953F1 /* Unit Tests */ = {
