@@ -20,7 +20,7 @@ class ShowListsViewModelTests: XCTestCase {
         super.setUp()
         
         viewModelDelegate = ShowListsViewModelDelegateDouble()
-        managedObjectContext = InMemoryCoreDataStack.sharedInstance.managedObjectContext
+        managedObjectContext = InMemoryCoreDataStack().managedObjectContext
         viewModel = ShowListsViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
     }
     
@@ -30,11 +30,27 @@ class ShowListsViewModelTests: XCTestCase {
     }
     
     func testShouldPresentOneList() {
-        addListWithName("Richard")
+        let listName = "Shake it"
+        addListWithName(listName)
         viewModel?.fetchLists()
         XCTAssertTrue(viewModelDelegate!.showListsCalled)
-        XCTAssertEqual(viewModel?.lists[0].name, "Richard")
+        XCTAssertEqual(viewModel?.lists.count, 1)
+        XCTAssertEqual(viewModel?.lists[0].name, listName)
     }
+    
+    func testShouldPresentTwoLists() {
+        let listName1 = "Shake it"
+        let listName2 = "Move it"
+        addListWithName(listName1)
+        addListWithName(listName2)
+        viewModel?.fetchLists()
+        XCTAssertTrue(viewModelDelegate!.showListsCalled)
+        XCTAssertEqual(viewModel?.lists.count, 2)
+        XCTAssertEqual(viewModel?.lists[0].name, listName1)
+        XCTAssertEqual(viewModel?.lists[1].name, listName2)
+    }
+    
+    // MARK: - Test Helpers
     
     func addListWithName(name: String) {
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext!)
