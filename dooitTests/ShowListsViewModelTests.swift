@@ -20,7 +20,7 @@ class ShowListsViewModelTests: XCTestCase {
         super.setUp()
         
         viewModelDelegate = ShowListsViewModelDelegateDouble()
-        managedObjectContext = InMemoryCoreDataStack().managedObjectContext
+        managedObjectContext = InMemoryCoreDataStack().managedObjectContext()
         viewModel = ShowListsViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
     }
     
