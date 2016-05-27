@@ -25,19 +25,11 @@ class ShowListsViewModelTests: XCTestCase {
     
     override func tearDown() {
         let fetchRequest = NSFetchRequest(entityName: "List")
-        
-        do {
-            let items = try managedObjectContext!.executeFetchRequest(fetchRequest) as! [NSManagedObject]
-            
-            for item in items {
-                managedObjectContext!.deleteObject(item)
-            }
-            
-            // Save Changes
-            try managedObjectContext!.save()
-        } catch let error as NSError {
-            print(error)
+        let items = try! managedObjectContext!.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        for item in items {
+            managedObjectContext!.deleteObject(item)
         }
+        try! managedObjectContext!.save()
         super.tearDown()
     }
     
