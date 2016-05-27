@@ -18,10 +18,27 @@ class ShowListsViewModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         viewModelDelegate = ShowListsViewModelDelegateDouble()
-        managedObjectContext = InMemoryCoreDataStack().managedObjectContext()
+        managedObjectContext = InMemoryCoreDataStack.sharedInstance.managedObjectContext
         viewModel = ShowListsViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+    }
+    
+    override func tearDown() {
+        let fetchRequest = NSFetchRequest(entityName: "List")
+        
+        do {
+            let items = try managedObjectContext!.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
+            for item in items {
+                managedObjectContext!.deleteObject(item)
+            }
+            
+            // Save Changes
+            try managedObjectContext!.save()
+        } catch let error as NSError {
+            print(error)
+        }
+        super.tearDown()
     }
     
     func testShouldPresentBlankState() {
@@ -39,15 +56,11 @@ class ShowListsViewModelTests: XCTestCase {
     }
     
     func testShouldPresentTwoLists() {
-        let listName1 = "Shake it"
-        let listName2 = "Move it"
-        addListWithName(listName1)
-        addListWithName(listName2)
+        addListWithName("Shake it")
+        addListWithName("Move it")
         viewModel?.fetchLists()
         XCTAssertTrue(viewModelDelegate!.showListsCalled)
         XCTAssertEqual(viewModel?.lists.count, 2)
-        XCTAssertEqual(viewModel?.lists[0].name, listName1)
-        XCTAssertEqual(viewModel?.lists[1].name, listName2)
     }
     
     // MARK: - Test Helpers
