@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import dooit
 
 class ShowListsViewModelDelegateDouble: ShowListsViewModelDelegate {
     
@@ -19,14 +20,6 @@ class ShowListsViewModelDelegateDouble: ShowListsViewModelDelegate {
     
     func showBlankstate() {
         showBlankstateCalled = true
-    }
-    
-    func numberOfListsToShow() -> Int {
-        return 0
-    }
-    
-    func listAtPosition(position: Int) -> List {
-        return List()
     }
     
 }

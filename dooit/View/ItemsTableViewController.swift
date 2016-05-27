@@ -23,8 +23,7 @@ class ItemsTableViewController: UITableViewController {
     }
     
     func setUpCoreData() {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        managedContext = appDelegate.managedObjectContext
+        managedContext = SQLiteCoreDataStack.sharedInstance.managedObjectContext
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -7,25 +7,43 @@
 //
 
 import Foundation
+import CoreData
 
 class ShowListsViewModel {
     
     var delegate: ShowListsViewModelDelegate
+    var managedObjectContext: NSManagedObjectContext
     
-    init(delegate: ShowListsViewModelDelegate) {
+    var lists: [List] = []
+    
+    init(delegate: ShowListsViewModelDelegate, managedObjectContext: NSManagedObjectContext) {
         self.delegate = delegate
+        self.managedObjectContext = managedObjectContext
     }
     
-    func showLists() {
-        delegate.showBlankstate()
+    func fetchLists() {
+        let fetchRequest = NSFetchRequest(entityName: "List")
+        do {
+            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+            lists = results as! [List]
+            presentLists()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
+    func presentLists() {
+        if lists.count == 0 {
+            delegate.showBlankstate()
+        } else {
+            delegate.showLists()
+        }
     }
     
 }
 
 protocol ShowListsViewModelDelegate {
     
-    func numberOfListsToShow() -> Int
-    func listAtPosition(position: Int) -> List
     func showLists()
     func showBlankstate()
     
