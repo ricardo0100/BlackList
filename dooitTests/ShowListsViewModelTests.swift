@@ -69,12 +69,7 @@ class ShowListsViewModelTests: XCTestCase {
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext!)
         let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext!) as! List
         list.name = name
-        
-        do {
-            try managedObjectContext!.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+        try! managedObjectContext!.save()
     }
     
 }
