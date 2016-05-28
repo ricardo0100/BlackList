@@ -17,5 +17,7 @@ extension Item {
     @NSManaged var marked: Bool
     @NSManaged var title: String?
     @NSManaged var list: List?
+    @NSManaged var creationTime: NSDate?
+    @NSManaged var updateTime: NSDate?
 
 }

@@ -16,5 +16,7 @@ extension List {
 
     @NSManaged var title: String?
     @NSManaged var items: Set<Item>
+    @NSManaged var creationTime: NSDate?
+    @NSManaged var updateTime: NSDate?
 
 }

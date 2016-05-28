@@ -15,4 +15,11 @@ class List: NSManagedObject {
     @NSManaged func addItemsObject(value: Item)
     @NSManaged func removeItemsObject(value: Item)
     
+    override func willSave() {
+        if self.updateTime == nil {
+            self.updateTime = NSDate()
+        }
+    }
+    
+    
 }

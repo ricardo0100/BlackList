@@ -91,7 +91,7 @@ class ListsTableViewController: UITableViewController {
         
         let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
             let textField = alert.textFields!.first
-            self.saveListWithName(textField!.text!)
+            self.saveListWithTitle(textField!.text!)
             self.tableView.reloadData()
         })
         
@@ -118,10 +118,11 @@ class ListsTableViewController: UITableViewController {
         }
     }
     
-    func saveListWithName(title: String) {
+    func saveListWithTitle(title: String) {
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedContext!)
-        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! List
-        person.title = title
+        let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! List
+        list.title = title
+        list.creationTime = NSDate()
         do {
             try managedContext!.save()
             fetchLists()

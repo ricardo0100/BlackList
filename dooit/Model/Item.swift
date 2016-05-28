@@ -12,6 +12,10 @@ import CoreData
 @objc(Item)
 class Item: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    override func willSave() {
+        if self.updateTime == nil {
+            self.updateTime = NSDate()
+        }
+    }
 
 }
