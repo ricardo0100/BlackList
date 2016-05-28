@@ -44,7 +44,7 @@ class ShowListsViewModelTests: XCTestCase {
         viewModel?.fetchLists()
         XCTAssertTrue(viewModelDelegate!.showListsCalled)
         XCTAssertEqual(viewModel?.lists.count, 1)
-        XCTAssertEqual(viewModel?.lists[0].name, listName)
+        XCTAssertEqual(viewModel?.lists[0].title, listName)
     }
     
     func testShouldPresentTwoLists() {
@@ -60,7 +60,7 @@ class ShowListsViewModelTests: XCTestCase {
     func addListWithName(name: String) {
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext!)
         let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext!) as! List
-        list.name = name
+        list.title = name
         try! managedObjectContext!.save()
     }
     
