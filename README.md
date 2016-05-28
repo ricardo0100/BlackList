@@ -1,4 +1,4 @@
-![dooit](https://github.com/ricardo0100/dooit/blob/master/icon/small-icon.png)
+![dooit](htts://github.com/ricardo0100/dooit/blob/master/icon/small-icon.png)
 
 [![Build Status](https://travis-ci.org/ricardo0100/dooit.svg?branch=master)](https://travis-ci.org/ricardo0100/dooit)
 [![codecov](https://codecov.io/gh/ricardo0100/dooit/branch/master/graph/badge.svg?precision=2)](https://codecov.io/gh/ricardo0100/dooit)
@@ -12,10 +12,24 @@
 
 ### Tests and CI
 
-### Data Model v1.0
-
+### Data Model
+#### version: 1
 - List
-  - __name__: String
+  - __title__: String
   - __items__: [Item]
 - Item
-  - __name__: String
+  - __title__: String
+  - __marked__: Bool
+
+#### version: 2
+
+  - List
+    - __title__: String
+    - __items__: [Item]
+    - __updateTime__: NSDate
+    - __creationTime__: NSDate
+  - Item
+    - __title__: String
+    - __marked__: Bool
+    - __updateTime__: NSDate
+    - __creationTime__: NSDate
