@@ -22,7 +22,7 @@ class ItemTableViewCell: UITableViewCell {
     var item: Item? {
         didSet {
             marked = item!.marked
-            name.text = item!.name
+            name.text = item!.title
         }
     }
     

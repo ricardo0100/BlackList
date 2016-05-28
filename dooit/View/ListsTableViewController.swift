@@ -50,7 +50,7 @@ class ListsTableViewController: UITableViewController {
         if segue.identifier == "List Selected" {
             let itemsViewController = segue.destinationViewController as! ItemsTableViewController
             let list = lists[tableView.indexPathForSelectedRow!.row]
-            itemsViewController.title = list.name
+            itemsViewController.title = list.title
             itemsViewController.list = list
         }
     }
@@ -66,7 +66,7 @@ class ListsTableViewController: UITableViewController {
         let list = lists[indexPath.row]
         
         cell!.textLabel!.textColor = UIColor.whiteColor()
-        cell!.textLabel!.text = list.name
+        cell!.textLabel!.text = list.title
         
         return cell!
     }
@@ -118,10 +118,10 @@ class ListsTableViewController: UITableViewController {
         }
     }
     
-    func saveListWithName(name: String) {
+    func saveListWithName(title: String) {
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedContext!)
         let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! List
-        person.name = name
+        person.title = title
         do {
             try managedContext!.save()
             fetchLists()

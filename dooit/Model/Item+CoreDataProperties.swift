@@ -15,7 +15,7 @@ import CoreData
 extension Item {
 
     @NSManaged var marked: Bool
-    @NSManaged var name: String?
+    @NSManaged var title: String?
     @NSManaged var list: List?
 
 }

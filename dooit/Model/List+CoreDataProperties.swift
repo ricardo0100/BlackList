@@ -14,7 +14,7 @@ import CoreData
 
 extension List {
 
-    @NSManaged var name: String?
+    @NSManaged var title: String?
     @NSManaged var items: Set<Item>
 
 }

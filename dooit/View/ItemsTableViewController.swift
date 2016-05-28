@@ -87,11 +87,11 @@ class ItemsTableViewController: UITableViewController {
         items = Array(list!.items)
     }
     
-    func saveItemWithName(name: String) {
+    func saveItemWithName(title: String) {
         let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:managedContext!)
         let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Item
         
-        item.name = name
+        item.title = title
         list!.addItemsObject(item)
         
         do {
