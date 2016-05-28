@@ -24,6 +24,7 @@
 		BAF1ADD11CF9371B004EAA23 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCD1CF9371B004EAA23 /* List.swift */; };
 		BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCE1CF9371B004EAA23 /* Item+CoreDataProperties.swift */; };
 		BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCF1CF9371B004EAA23 /* Item.swift */; };
+		BAF1ADD61CFA4210004EAA23 /* GUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BAF1ADCE1CF9371B004EAA23 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BAF1ADCF1CF9371B004EAA23 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BAF1ADD41CF940E6004EAA23 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GUIHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +127,12 @@
 			isa = PBXGroup;
 			children = (
 				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
+				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
 				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
 				BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */,
 				BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */,
+				BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */,
 				BAB444EB1CE5274F0086BC63 /* Assets.xcassets */,
-				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */,
 				BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */,
 				BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */,
+				BAF1ADD61CFA4210004EAA23 /* GUIHelpers.swift in Sources */,
 				BAF1ADCB1CF93417004EAA23 /* Model.xcdatamodeld in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
 				BAF1ADD01CF9371B004EAA23 /* List+CoreDataProperties.swift in Sources */,

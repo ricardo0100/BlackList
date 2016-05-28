@@ -10,13 +10,13 @@
             <objects>
                 <tableViewController id="QJO-IM-93l" customClass="ListsTableViewController" customModule="dooit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wpU-ZO-Mod">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="List Cell" id="VpO-yt-doE">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VpO-yt-doE" id="uWx-6I-DhL">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -33,6 +33,7 @@
                             <outlet property="delegate" destination="QJO-IM-93l" id="lIT-eQ-Y2G"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Lists" id="okO-wE-daZ">
                         <barButtonItem key="rightBarButtonItem" title="New list" id="VPB-6X-2ai">
                             <connections>
@@ -41,8 +42,37 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="blankStateView" destination="5hd-Gw-771" id="Yn4-IY-u64"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZY-7S-0RB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="5hd-Gw-771" userLabel="Blank State View">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="365"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No lists to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SX-2p-Qnh">
+                            <rect key="frame" x="65" y="170" width="111" height="25"/>
+                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointUp" translatesAutoresizingMaskIntoConstraints="NO" id="JMK-Pr-OKw">
+                            <rect key="frame" x="178" y="12" width="50" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="MKX-09-ZDw"/>
+                                <constraint firstAttribute="height" constant="100" id="bOi-cC-yv5"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JMK-Pr-OKw" secondAttribute="trailing" constant="12" id="02r-ee-9c0"/>
+                        <constraint firstItem="3SX-2p-Qnh" firstAttribute="centerX" secondItem="5hd-Gw-771" secondAttribute="centerX" id="Ese-xt-UYA"/>
+                        <constraint firstItem="3SX-2p-Qnh" firstAttribute="centerY" secondItem="5hd-Gw-771" secondAttribute="centerY" id="hiu-Fn-Zyg"/>
+                        <constraint firstItem="JMK-Pr-OKw" firstAttribute="top" secondItem="5hd-Gw-771" secondAttribute="top" constant="12" id="kbd-OH-XSb"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1052.5" y="1231.5"/>
         </scene>
@@ -138,5 +168,6 @@
     </scenes>
     <resources>
         <image name="ic_radio_button_unchecked" width="24" height="24"/>
+        <image name="pointUp" width="170" height="470"/>
     </resources>
 </document>

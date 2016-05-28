@@ -9,65 +9,70 @@
 import UIKit
 import CoreData
 
-class ListsTableViewController: UITableViewController {
+class ListsTableViewController: UITableViewController, ShowListsViewModelDelegate {
     
+    //Remove managedContext reference after save implementation
+    @IBOutlet var blankStateView: UIView!
     var managedContext: NSManagedObjectContext?
-    var lists: [List] = []
+    var viewModel: ShowListsViewModel?
     
     // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpCoreData()
         setUpTitle()
-    }
-    
-    func setUpCoreData() {
-        managedContext = SQLiteCoreDataStack.sharedInstance.managedObjectContext
-    }
-    
-    func setUpTitle() {
-        let attributedText = NSMutableAttributedString(string: "dooit")
-        let color = UIColor.whiteColor()
-        let blackFont = UIFont(name: "Avenir-Black", size: 20)!
-        let attributeBlack = [NSForegroundColorAttributeName: color, NSFontAttributeName: blackFont]
-        attributedText.addAttributes(attributeBlack, range: NSRange(location: 0, length: 3))
-        let blackLight = UIFont(name: "Avenir-Light", size: 24)!
-        let attributeLight = [NSForegroundColorAttributeName: color, NSFontAttributeName: blackLight]
-        attributedText.addAttributes(attributeLight, range: NSRange(location: 3, length: 2))
-        let titleLabel = UILabel()
-        titleLabel.attributedText = attributedText
-        titleLabel.sizeToFit()
-        navigationItem.titleView = titleLabel
+        setUpViewModel()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        fetchLists()
+        viewModel!.fetchLists()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "List Selected" {
             let itemsViewController = segue.destinationViewController as! ItemsTableViewController
-            let list = lists[tableView.indexPathForSelectedRow!.row]
+            let list = viewModel!.lists[tableView.indexPathForSelectedRow!.row]
             itemsViewController.title = list.title
             itemsViewController.list = list
         }
     }
     
+    func showLists() {
+        tableView.backgroundView = nil
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+    }
+    
+    func showBlankstate() {
+        tableView.backgroundView = blankStateView
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.reloadData()
+    }
+    
+    func setUpTitle() {
+        let titleLabel = UILabel()
+        titleLabel.attributedText = GUIHelpers.setUpTitle()
+        titleLabel.sizeToFit()
+        navigationItem.titleView = titleLabel
+    }
+    
+    func setUpViewModel() {
+        managedContext = SQLiteCoreDataStack.sharedInstance.managedObjectContext
+        viewModel = ShowListsViewModel(delegate: self, managedObjectContext: managedContext!)
+    }
+    
     // MARK: - UITableView DataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lists.count
+        return viewModel!.lists.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("List Cell")
-        let list = lists[indexPath.row]
-        
+        let list = viewModel!.lists[indexPath.row]
+        print()
         cell!.textLabel!.textColor = UIColor.whiteColor()
         cell!.textLabel!.text = list.title
-        
         return cell!
     }
     
@@ -77,9 +82,7 @@ class ListsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let list = lists[indexPath.row]
-            lists.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let list = viewModel!.lists[indexPath.row]
             deleteList(list)
         }
     }
@@ -88,35 +91,21 @@ class ListsTableViewController: UITableViewController {
 
     @IBAction func addName(sender: AnyObject) {
         let alert = UIAlertController(title: "New List", message: "Add a new list name", preferredStyle: .Alert)
-        
         let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
             let textField = alert.textFields!.first
             self.saveListWithTitle(textField!.text!)
             self.tableView.reloadData()
         })
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
         alert.addTextFieldWithConfigurationHandler {
             (textField: UITextField) -> Void in
         }
-        
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
-        
         presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: - Core Data
-    
-    func fetchLists() {
-        let fetchRequest = NSFetchRequest(entityName: "List")
-        do {
-            let results = try managedContext!.executeFetchRequest(fetchRequest)
-            lists = results as! [List]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-    }
     
     func saveListWithTitle(title: String) {
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedContext!)
@@ -125,7 +114,7 @@ class ListsTableViewController: UITableViewController {
         list.creationTime = NSDate()
         do {
             try managedContext!.save()
-            fetchLists()
+            viewModel!.fetchLists()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -135,6 +124,7 @@ class ListsTableViewController: UITableViewController {
         managedContext!.deleteObject(list)
         do {
             try managedContext!.save()
+            viewModel!.fetchLists()
         } catch let error as NSError  {
             print("Could not delete \(error), \(error.userInfo)")
         }
