@@ -11,7 +11,6 @@
 		BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */; };
 		BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */; };
 		BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578511CF55981006953F1 /* ShowListsViewModel.swift */; };
-		BA55785C1CF56220006953F1 /* ShowListsViewModelDelegateDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA55785A1CF56162006953F1 /* ShowListsViewModelDelegateDouble.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
 		BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */; };
 		BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444E51CE5274F0086BC63 /* Main.storyboard */; };
@@ -25,6 +24,8 @@
 		BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCE1CF9371B004EAA23 /* Item+CoreDataProperties.swift */; };
 		BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCF1CF9371B004EAA23 /* Item.swift */; };
 		BAF1ADD61CFA4210004EAA23 /* GUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */; };
+		BAF1ADD91CFA525B004EAA23 /* SaveListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADD71CFA5223004EAA23 /* SaveListViewModelTests.swift */; };
+		BAF1ADDB1CFA81CA004EAA23 /* SaveListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADDA1CFA81CA004EAA23 /* SaveListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,6 @@
 		BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelTests.swift; sourceTree = "<group>"; };
 		BA55784A1CF3EBD4006953F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA5578511CF55981006953F1 /* ShowListsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowListsViewModel.swift; path = ViewModel/ShowListsViewModel.swift; sourceTree = "<group>"; };
-		BA55785A1CF56162006953F1 /* ShowListsViewModelDelegateDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelDelegateDouble.swift; sourceTree = "<group>"; };
 		BAB444DE1CE5274F0086BC63 /* dooit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dooit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB444E11CE5274F0086BC63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListsTableViewController.swift; path = View/ListsTableViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +61,8 @@
 		BAF1ADCF1CF9371B004EAA23 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BAF1ADD41CF940E6004EAA23 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GUIHelpers.swift; sourceTree = "<group>"; };
+		BAF1ADD71CFA5223004EAA23 /* SaveListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveListViewModelTests.swift; sourceTree = "<group>"; };
+		BAF1ADDA1CFA81CA004EAA23 /* SaveListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveListViewModel.swift; path = ViewModel/SaveListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */,
-				BA55785A1CF56162006953F1 /* ShowListsViewModelDelegateDouble.swift */,
+				BAF1ADD71CFA5223004EAA23 /* SaveListViewModelTests.swift */,
 				BAF1AD901CF7E47B004EAA23 /* InMemoryCoreDataStack.swift */,
 				BA55784A1CF3EBD4006953F1 /* Info.plist */,
 			);
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5578511CF55981006953F1 /* ShowListsViewModel.swift */,
+				BAF1ADDA1CFA81CA004EAA23 /* SaveListViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -269,8 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF1ADD91CFA525B004EAA23 /* SaveListViewModelTests.swift in Sources */,
 				BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */,
-				BA55785C1CF56220006953F1 /* ShowListsViewModelDelegateDouble.swift in Sources */,
 				BAF1AD921CF7E534004EAA23 /* InMemoryCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +285,7 @@
 				BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */,
 				BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */,
 				BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */,
+				BAF1ADDB1CFA81CA004EAA23 /* SaveListViewModel.swift in Sources */,
 				BAF1AD8F1CF7E338004EAA23 /* SQLiteCoreDataStack.swift in Sources */,
 				BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */,
 				BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */,

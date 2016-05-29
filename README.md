@@ -13,7 +13,7 @@
 ### Tests and CI
 
 ### Data Model
-#### version: 1
+##### Version 1
 - List
   - __title__: String
   - __items__: [Item]
@@ -21,7 +21,7 @@
   - __title__: String
   - __marked__: Bool
 
-#### version: 2
+##### Version 2
 
   - List
     - __title__: String

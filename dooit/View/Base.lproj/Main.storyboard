@@ -48,17 +48,17 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZY-7S-0RB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="5hd-Gw-771" userLabel="Blank State View">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="365"/>
+                    <rect key="frame" x="0.0" y="0.0" width="172" height="263"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No lists to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SX-2p-Qnh">
-                            <rect key="frame" x="65" y="170" width="111" height="25"/>
+                            <rect key="frame" x="31" y="119" width="111" height="25"/>
                             <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointUp" translatesAutoresizingMaskIntoConstraints="NO" id="JMK-Pr-OKw">
-                            <rect key="frame" x="178" y="12" width="50" height="100"/>
+                            <rect key="frame" x="110" y="12" width="50" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="MKX-09-ZDw"/>
                                 <constraint firstAttribute="height" constant="100" id="bOi-cC-yv5"/>

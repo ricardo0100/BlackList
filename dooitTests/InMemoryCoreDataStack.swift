@@ -51,4 +51,12 @@ class InMemoryCoreDataStack: NSObject {
         return managedObjectContext
     }()
     
+    func clearStore() {
+        let fetchRequest = NSFetchRequest(entityName: "List")
+        let items = try! managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        for item in items {
+            managedObjectContext.deleteObject(item)
+        }
+        try! managedObjectContext.save()
+    }
 }

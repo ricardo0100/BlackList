@@ -21,16 +21,7 @@ class ShowListsViewModelTests: XCTestCase {
         viewModelDelegate = ShowListsViewModelDelegateDouble()
         managedObjectContext = InMemoryCoreDataStack.sharedInstance.managedObjectContext
         viewModel = ShowListsViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
-    }
-    
-    override func tearDown() {
-        let fetchRequest = NSFetchRequest(entityName: "List")
-        let items = try! managedObjectContext!.executeFetchRequest(fetchRequest) as! [NSManagedObject]
-        for item in items {
-            managedObjectContext!.deleteObject(item)
-        }
-        try! managedObjectContext!.save()
-        super.tearDown()
+        InMemoryCoreDataStack.sharedInstance.clearStore()
     }
     
     func testShouldPresentBlankState() {
@@ -62,6 +53,21 @@ class ShowListsViewModelTests: XCTestCase {
         let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext!) as! List
         list.title = name
         try! managedObjectContext!.save()
+    }
+    
+}
+
+class ShowListsViewModelDelegateDouble: ShowListsViewModelDelegate {
+    
+    var showListsCalled = false
+    var showBlankstateCalled = false
+    
+    func showLists() {
+        showListsCalled = true
+    }
+    
+    func showBlankstate() {
+        showBlankstateCalled = true
     }
     
 }
