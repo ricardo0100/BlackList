@@ -23,16 +23,41 @@ class SaveListViewModelTests: XCTestCase {
         InMemoryCoreDataStack.sharedInstance.clearStore()
     }
     
-    func testShouldPresentErrorMessageForEmptyTitle() {
-        let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext!)
-        let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! List
-        
+    func testEntityCreation() {
         viewModel = SaveListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
-        viewModel!.saveList(list)
-        
-        XCTAssertTrue(viewModelDelegate!.showErrorMessageCalled)
-        XCTAssertEqual(viewModelDelegate!.errorMessage, viewModel!.emptyTitleError)
+        XCTAssertNotNil(viewModel!.list)
     }
+    
+    func testEntityCreationTime() {
+        viewModel = SaveListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+        XCTAssertNotNil(viewModel!.list.creationTime)
+    }
+    
+    func testBlankTitleErrorMessagePresentation() {
+        viewModel = SaveListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+        viewModel!.saveList()
+        XCTAssertTrue(viewModelDelegate!.showErrorMessageCalled)
+        XCTAssertEqual(viewModelDelegate!.errorMessage, viewModel?.emptyTitleErrorMessage)
+    }
+    
+    func testSuccessMessage() {
+        viewModel = SaveListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+        viewModel!.list.title = "Go to gym"
+        viewModel!.saveList()
+        XCTAssertTrue(viewModelDelegate!.showSuccessMessageCalled)
+        XCTAssertEqual(viewModelDelegate!.successMessage, viewModel?.savingSuccessMessage)
+    }
+    
+    func testListPersistenceInStore() {
+        viewModel = SaveListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+        viewModel!.list.title = "Make a cake"
+        viewModel!.saveList()
+        let fetchRequest = NSFetchRequest(entityName: "List")
+        let results = try! managedObjectContext!.executeFetchRequest(fetchRequest)
+        let lists = results as! [List]
+        XCTAssertEqual(lists.count, 1)
+    }
+    
 }
 
 class SaveListViewModelDelegateDouble: SaveListViewModelDelegate {

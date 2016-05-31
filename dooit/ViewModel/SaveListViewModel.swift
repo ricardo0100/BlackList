@@ -11,15 +11,18 @@ import CoreData
 
 class SaveListViewModel {
     
-    let emptyTitleError = "You must provide a title for the list"
+    let emptyTitleErrorMessage = "You must provide a title for the list"
+    let savingSuccessMessage = "List saved"
     
     var delegate: SaveListViewModelDelegate
     var managedObjectContext: NSManagedObjectContext
-    var list: List?
+    var list: List
     
     init (delegate: SaveListViewModelDelegate, managedObjectContext: NSManagedObjectContext) {
         self.delegate = delegate
         self.managedObjectContext = managedObjectContext
+        let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext)
+        list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! List
     }
     
     init (delegate: SaveListViewModelDelegate, managedObjectContext: NSManagedObjectContext, list: List) {
@@ -28,8 +31,13 @@ class SaveListViewModel {
         self.list = list
     }
     
-    func saveList(list: List) {
-        delegate.showErrorMessage(emptyTitleError)
+    func saveList() {
+        do {
+            try managedObjectContext.save()
+            delegate.showSuccessMessage(savingSuccessMessage)
+        } catch _ as NSError {
+            delegate.showErrorMessage(emptyTitleErrorMessage)
+        }
     }
     
 }

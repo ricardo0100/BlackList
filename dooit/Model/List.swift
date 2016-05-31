@@ -15,9 +15,13 @@ class List: NSManagedObject {
     @NSManaged func addItemsObject(value: Item)
     @NSManaged func removeItemsObject(value: Item)
     
+    override func awakeFromInsert() {
+        creationTime = NSDate()
+    }
+    
     override func willSave() {
-        if self.updateTime == nil {
-            self.updateTime = NSDate()
+        if updateTime == nil {
+            updateTime = NSDate()
         }
     }
     
