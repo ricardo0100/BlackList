@@ -9,12 +9,10 @@
 import UIKit
 import CoreData
 
-class ListsTableViewController: UITableViewController, ShowListsViewModelDelegate {
+class ListsTableViewController: UITableViewController, ShowListsViewModelDelegate, SaveListViewModelDelegate, DeleteListViewModelDelegate {
     
-    //Remove managedContext reference after save implementation
     @IBOutlet var blankStateView: UIView!
-    var managedContext: NSManagedObjectContext?
-    var viewModel: ShowListsViewModel?
+    var showListsViewModel: ShowListsViewModel?
     
     // MARK: - UIViewController Lifecycle
     
@@ -26,13 +24,13 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel!.fetchLists()
+        showListsViewModel!.fetchLists()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "List Selected" {
             let itemsViewController = segue.destinationViewController as! ItemsTableViewController
-            let list = viewModel!.lists[tableView.indexPathForSelectedRow!.row]
+            let list = showListsViewModel!.lists[tableView.indexPathForSelectedRow!.row]
             itemsViewController.title = list.title
             itemsViewController.list = list
         }
@@ -41,6 +39,7 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
     func showLists() {
         tableView.backgroundView = nil
         tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.reloadData()
     }
     
     func showBlankstate() {
@@ -57,20 +56,40 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
     }
     
     func setUpViewModel() {
-        managedContext = SQLiteCoreDataStack.sharedInstance.managedObjectContext
-        viewModel = ShowListsViewModel(delegate: self, managedObjectContext: managedContext!)
+        showListsViewModel = ShowListsViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
+    }
+    
+    func showSuccessMessage(message: String) {
+        showListsViewModel!.fetchLists()
+    }
+    
+    func showErrorMessage(message: String) {
+        let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func deleteListSuccessCallback() {
+        showListsViewModel!.fetchLists()
+    }
+    
+    func deleteListErrorCallback() {
+        let alert = UIAlertController(title: "Warning!", message: "Error on deleting list", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: - UITableView DataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel!.lists.count
+        return showListsViewModel!.lists.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("List Cell")
-        let list = viewModel!.lists[indexPath.row]
-        print()
+        let list = showListsViewModel!.lists[indexPath.row]
         cell!.textLabel!.textColor = UIColor.whiteColor()
         cell!.textLabel!.text = list.title
         return cell!
@@ -82,7 +101,7 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let list = viewModel!.lists[indexPath.row]
+            let list = showListsViewModel!.lists[indexPath.row]
             deleteList(list)
         }
     }
@@ -105,29 +124,15 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    // MARK: - Core Data
-    
     func saveListWithTitle(title: String) {
-        let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedContext!)
-        let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! List
-        list.title = title
-        list.creationTime = NSDate()
-        do {
-            try managedContext!.save()
-            viewModel!.fetchLists()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+        let saveListViewModel = SaveListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
+        saveListViewModel.list.title = title
+        saveListViewModel.saveList()
     }
     
     func deleteList(list: List) {
-        managedContext!.deleteObject(list)
-        do {
-            try managedContext!.save()
-            viewModel!.fetchLists()
-        } catch let error as NSError  {
-            print("Could not delete \(error), \(error.userInfo)")
-        }
+        let deleteListViewModel = DeleteListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
+        deleteListViewModel.deleteList(list)
     }
     
 }
