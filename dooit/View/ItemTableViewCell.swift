@@ -16,8 +16,7 @@ class ItemTableViewCell: UITableViewCell {
     let selectedRadioImage = UIImage(named: "ic_radio_button_checked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     let unselectedRadioImage = UIImage(named: "ic_radio_button_unchecked")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     
-    var setMarked: ((Item) -> Void)? = nil
-    var setUnmarked: ((Item) -> Void)? = nil
+    var markedTapped: ((Item) -> Void)? = nil
     
     var item: Item? {
         didSet {
@@ -47,12 +46,7 @@ class ItemTableViewCell: UITableViewCell {
     }
     
     func radioButtonTaped() {
-        marked = !marked
-        if marked {
-            setMarked!(item!)
-        } else {
-            setUnmarked!(item!)
-        }
+        markedTapped!(item!)
     }
 
 }

@@ -12,11 +12,11 @@ import CoreData
 
 class CoreDataHelpers {
     
-    static func createListWithTitle(name: String) -> List {
+    static func createListWithTitle(title: String) -> List {
         let moc = InMemoryCoreDataStack.sharedInstance.managedObjectContext
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext: moc)
         let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: moc) as! List
-        list.title = name
+        list.title = title
         try! moc.save()
         return list
     }
@@ -29,6 +29,25 @@ class CoreDataHelpers {
         list.addItemsObject(item)
         try! moc.save()
         return item
+    }
+    
+    static func createItemForList(list: List, withTitle title: String, andMarked marked: Bool) -> Item {
+        let moc = InMemoryCoreDataStack.sharedInstance.managedObjectContext
+        let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:moc)
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: moc) as! Item
+        item.title = title
+        item.marked = marked
+        list.addItemsObject(item)
+        try! moc.save()
+        return item
+    }
+    
+    static func retrieveAllItemsForList(list: List) -> [Item] {
+        let moc = InMemoryCoreDataStack.sharedInstance.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Item")
+        let results = try! moc.executeFetchRequest(fetchRequest)
+        let items = results as! [Item]
+        return items
     }
     
 }

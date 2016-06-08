@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */; };
 		BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */; };
+		BA265B7C1D08A97100680627 /* MarkItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */; };
+		BA265B7E1D08AB1D00680627 /* MarkItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */; };
 		BA34371C1CFE71F200CD99C8 /* DeleteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */; };
 		BA34371E1CFE738500CD99C8 /* DeleteListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */; };
 		BA3437201CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = View/ItemsTableViewController.swift; sourceTree = "<group>"; };
 		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
+		BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkItemViewModel.swift; sourceTree = "<group>"; };
+		BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkItemViewModelTests.swift; sourceTree = "<group>"; };
 		BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteListViewModel.swift; path = ViewModel/DeleteListViewModel.swift; sourceTree = "<group>"; };
 		BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteListViewModelTests.swift; sourceTree = "<group>"; };
 		BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowItemsForListViewModel.swift; path = ViewModel/ShowItemsForListViewModel.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */,
+				BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */,
+				BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -157,8 +163,8 @@
 				BA3437211CFFE97000CD99C8 /* Lists */,
 				BA3437241CFFE98800CD99C8 /* Items */,
 				BAF1AD901CF7E47B004EAA23 /* InMemoryCoreDataStack.swift */,
-				BA55784A1CF3EBD4006953F1 /* Info.plist */,
 				BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */,
+				BA55784A1CF3EBD4006953F1 /* Info.plist */,
 			);
 			name = "Unit Tests";
 			path = dooitTests;
@@ -325,6 +331,7 @@
 				BAF1AD921CF7E534004EAA23 /* InMemoryCoreDataStack.swift in Sources */,
 				BA3437261CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift in Sources */,
 				BA34371E1CFE738500CD99C8 /* DeleteListViewModelTests.swift in Sources */,
+				BA265B7E1D08AB1D00680627 /* MarkItemViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +347,7 @@
 				BAF1AD8F1CF7E338004EAA23 /* SQLiteCoreDataStack.swift in Sources */,
 				BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */,
 				BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */,
+				BA265B7C1D08A97100680627 /* MarkItemViewModel.swift in Sources */,
 				BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */,
 				BAF1ADD61CFA4210004EAA23 /* GUIHelpers.swift in Sources */,
 				BAF1ADCB1CF93417004EAA23 /* Model.xcdatamodeld in Sources */,

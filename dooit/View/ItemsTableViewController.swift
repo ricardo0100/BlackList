@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 
-class ItemsTableViewController: UITableViewController, ShowItemsForListViewModelDelegate {
+class ItemsTableViewController: UITableViewController, ShowItemsForListViewModelDelegate, MarkItemViewModelDelegate {
     
     @IBOutlet var blankStateView: UIView!
     
     var list: List?
     var showItemsForListViewModel: ShowItemsForListViewModel?
+    var markItemViewModel: MarkItemViewModel?
     
     // MARK: - UIViewController Lifecycle
 
@@ -25,6 +26,7 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
     
     func setUpViewModel() {
         showItemsForListViewModel = ShowItemsForListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext, list: list!)
+        markItemViewModel = MarkItemViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,8 +44,7 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         let cell = tableView.dequeueReusableCellWithIdentifier("Item Cell", forIndexPath: indexPath) as! ItemTableViewCell
         let item = showItemsForListViewModel!.items[indexPath.row]
         cell.item = item
-        cell.setMarked = setItemMarked
-        cell.setUnmarked = setItemUnmarked
+        cell.markedTapped = setMarkedTapped
         return cell
     }
     
@@ -109,22 +110,21 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         }
     }
     
-    func setItemMarked(item: Item) {
-        item.marked = true
-        do {
-            try SQLiteCoreDataStack.sharedInstance.managedObjectContext.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+    func setMarkedTapped(item: Item) {
+        markItemViewModel!.changeMarkedStatusForItem(item)
     }
     
-    func setItemUnmarked(item: Item) {
-        item.marked = false
-        do {
-            try SQLiteCoreDataStack.sharedInstance.managedObjectContext.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+    func setMarkedCallBack(item: Item) {
+        let index = showItemsForListViewModel!.items.indexOf(item)
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! ItemTableViewCell
+        cell.marked = true
+        
+    }
+    
+    func setUnmarkedCallBack(item: Item) {
+        let index = showItemsForListViewModel!.items.indexOf(item)
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! ItemTableViewCell
+        cell.marked = false
     }
     
     func deleteItem(item: Item) {
