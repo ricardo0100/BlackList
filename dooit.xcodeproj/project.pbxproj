@@ -11,6 +11,9 @@
 		BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */; };
 		BA34371C1CFE71F200CD99C8 /* DeleteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */; };
 		BA34371E1CFE738500CD99C8 /* DeleteListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */; };
+		BA3437201CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */; };
+		BA3437261CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */; };
+		BA3437281CFFF1B800CD99C8 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */; };
 		BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */; };
 		BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578511CF55981006953F1 /* ShowListsViewModel.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
@@ -45,6 +48,9 @@
 		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteListViewModel.swift; path = ViewModel/DeleteListViewModel.swift; sourceTree = "<group>"; };
 		BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteListViewModelTests.swift; sourceTree = "<group>"; };
+		BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowItemsForListViewModel.swift; path = ViewModel/ShowItemsForListViewModel.swift; sourceTree = "<group>"; };
+		BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowItemsForListViewModelTests.swift; sourceTree = "<group>"; };
+		BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		BA5578461CF3EBD3006953F1 /* dooitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dooitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelTests.swift; sourceTree = "<group>"; };
 		BA55784A1CF3EBD4006953F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,14 +115,50 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		BA5578471CF3EBD4006953F1 /* Unit Tests */ = {
+		BA3437211CFFE97000CD99C8 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
 				BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */,
 				BAF1ADD71CFA5223004EAA23 /* SaveListViewModelTests.swift */,
 				BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		BA3437221CFFE97B00CD99C8 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				BA5578511CF55981006953F1 /* ShowListsViewModel.swift */,
+				BAF1ADDA1CFA81CA004EAA23 /* SaveListViewModel.swift */,
+				BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		BA3437231CFFE98100CD99C8 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		BA3437241CFFE98800CD99C8 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		BA5578471CF3EBD4006953F1 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BA3437211CFFE97000CD99C8 /* Lists */,
+				BA3437241CFFE98800CD99C8 /* Items */,
 				BAF1AD901CF7E47B004EAA23 /* InMemoryCoreDataStack.swift */,
 				BA55784A1CF3EBD4006953F1 /* Info.plist */,
+				BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */,
 			);
 			name = "Unit Tests";
 			path = dooitTests;
@@ -125,9 +167,8 @@
 		BA5578501CF55760006953F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				BA5578511CF55981006953F1 /* ShowListsViewModel.swift */,
-				BAF1ADDA1CFA81CA004EAA23 /* SaveListViewModel.swift */,
-				BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */,
+				BA3437221CFFE97B00CD99C8 /* Lists */,
+				BA3437231CFFE98100CD99C8 /* Items */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -278,9 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3437281CFFF1B800CD99C8 /* CoreDataHelpers.swift in Sources */,
 				BAF1ADD91CFA525B004EAA23 /* SaveListViewModelTests.swift in Sources */,
 				BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */,
 				BAF1AD921CF7E534004EAA23 /* InMemoryCoreDataStack.swift in Sources */,
+				BA3437261CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift in Sources */,
 				BA34371E1CFE738500CD99C8 /* DeleteListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +335,7 @@
 				BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */,
 				BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */,
 				BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */,
+				BA3437201CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift in Sources */,
 				BAF1ADDB1CFA81CA004EAA23 /* SaveListViewModel.swift in Sources */,
 				BAF1AD8F1CF7E338004EAA23 /* SQLiteCoreDataStack.swift in Sources */,
 				BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */,

@@ -9,37 +9,38 @@
 import UIKit
 import CoreData
 
-class ItemsTableViewController: UITableViewController {
+class ItemsTableViewController: UITableViewController, ShowItemsForListViewModelDelegate {
+    
+    @IBOutlet var blankStateView: UIView!
     
     var list: List?
-    var managedContext: NSManagedObjectContext?
-    var items: [Item] = []
+    var showItemsForListViewModel: ShowItemsForListViewModel?
     
     // MARK: - UIViewController Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpCoreData()
+        setUpViewModel()
     }
     
-    func setUpCoreData() {
-        managedContext = SQLiteCoreDataStack.sharedInstance.managedObjectContext
+    func setUpViewModel() {
+        showItemsForListViewModel = ShowItemsForListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext, list: list!)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        fetchItems()
+        showItemsForListViewModel!.fetchItems()
     }
     
     // MARK: - UITableView DataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return showItemsForListViewModel!.items.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Item Cell", forIndexPath: indexPath) as! ItemTableViewCell
-        let item = items[indexPath.row]
+        let item = showItemsForListViewModel!.items[indexPath.row]
         cell.item = item
         cell.setMarked = setItemMarked
         cell.setUnmarked = setItemUnmarked
@@ -52,11 +53,22 @@ class ItemsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let item = items[indexPath.row]
-            items.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let item = showItemsForListViewModel!.items[indexPath.row]
             deleteItem(item)
+            showItemsForListViewModel!.fetchItems()
         }
+    }
+    
+    func presentItems() {
+        tableView.backgroundView = nil
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.reloadData()
+    }
+    
+    func presentBlankState() {
+        tableView.backgroundView = blankStateView
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.reloadData()
     }
     
     // MARK: - Actions
@@ -81,22 +93,17 @@ class ItemsTableViewController: UITableViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    // MARK: - Core Data
-    
-    func fetchItems() {
-        items = Array(list!.items)
-    }
-    
     func saveItemWithName(title: String) {
-        let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:managedContext!)
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Item
+        let moc = SQLiteCoreDataStack.sharedInstance.managedObjectContext
+        let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:moc)
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: moc) as! Item
         
         item.title = title
         list!.addItemsObject(item)
         
         do {
-            try managedContext!.save()
-            items.append(item)
+            try moc.save()
+            showItemsForListViewModel!.fetchItems()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -105,7 +112,7 @@ class ItemsTableViewController: UITableViewController {
     func setItemMarked(item: Item) {
         item.marked = true
         do {
-            try managedContext!.save()
+            try SQLiteCoreDataStack.sharedInstance.managedObjectContext.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -114,16 +121,16 @@ class ItemsTableViewController: UITableViewController {
     func setItemUnmarked(item: Item) {
         item.marked = false
         do {
-            try managedContext!.save()
+            try SQLiteCoreDataStack.sharedInstance.managedObjectContext.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
     
     func deleteItem(item: Item) {
-        managedContext!.deleteObject(item)
+        SQLiteCoreDataStack.sharedInstance.managedObjectContext.deleteObject(item)
         do {
-            try managedContext!.save()
+            try SQLiteCoreDataStack.sharedInstance.managedObjectContext.save()
         } catch let error as NSError  {
             print("Could not delete \(error), \(error.userInfo)")
         }

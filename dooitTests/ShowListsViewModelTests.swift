@@ -30,8 +30,8 @@ class ShowListsViewModelTests: XCTestCase {
     }
     
     func testShouldPresentOneList() {
-        let listName = "Shake it"
-        addListWithName(listName)
+        let listName = "Open a hotel"
+        CoreDataHelpers.createListWithTitle(listName)
         viewModel?.fetchLists()
         XCTAssertTrue(viewModelDelegate!.showListsCalled)
         XCTAssertEqual(viewModel?.lists.count, 1)
@@ -39,20 +39,11 @@ class ShowListsViewModelTests: XCTestCase {
     }
     
     func testShouldPresentTwoLists() {
-        addListWithName("Shake it")
-        addListWithName("Move it")
+        CoreDataHelpers.createListWithTitle("Make cookies")
+        CoreDataHelpers.createListWithTitle("Make apple juice")
         viewModel?.fetchLists()
         XCTAssertTrue(viewModelDelegate!.showListsCalled)
         XCTAssertEqual(viewModel?.lists.count, 2)
-    }
-    
-    // MARK: - Test Helpers
-    
-    func addListWithName(name: String) {
-        let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext!)
-        let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext!) as! List
-        list.title = name
-        try! managedObjectContext!.save()
     }
     
 }

@@ -13,7 +13,7 @@ import CoreData
 class DeleteListViewModelTests: XCTestCase {
     
     var viewModel: DeleteListViewModel?
-    var viewModelDelegate: DeleteListViewModelDelegate?
+    var viewModelDelegate: DeleteListViewModelDelegateDouble?
     var managedObjectContext: NSManagedObjectContext?
     
     override func setUp() {
@@ -24,11 +24,12 @@ class DeleteListViewModelTests: XCTestCase {
         viewModel = DeleteListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
     }
     
-    func testDeleteListPersistenceStore() {
+    func testDeleteListPersistenceStoreSuccess() {
         addListWithName("Find a planet")
         let list = retrieveListsInStore()[0]
         viewModel!.deleteList(list)
         let lists = retrieveListsInStore()
+        XCTAssertTrue(viewModelDelegate!.deleteListSuccessCallbackCalled)
         XCTAssertEqual(lists.count, 0)
     }
     

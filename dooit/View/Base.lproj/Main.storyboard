@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JRi-aU-71l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JRi-aU-71l">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -81,13 +81,13 @@
             <objects>
                 <tableViewController id="NRn-Yi-IJ0" customClass="ItemsTableViewController" customModule="dooit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wb3-Wh-WCb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item Cell" rowHeight="44" id="4dY-Vo-gZJ" customClass="ItemTableViewCell" customModule="dooit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4dY-Vo-gZJ" id="MN6-H6-cxj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -123,6 +123,7 @@
                             <outlet property="delegate" destination="NRn-Yi-IJ0" id="O6C-vJ-ljX"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Items" id="sLV-BK-TjF">
                         <barButtonItem key="rightBarButtonItem" title="New item" id="wHj-bB-1L5">
                             <connections>
@@ -131,8 +132,37 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="blankStateView" destination="jHO-80-sOS" id="g4W-fe-y5u"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-1N-cyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="jHO-80-sOS" userLabel="Blank State View">
+                    <rect key="frame" x="0.0" y="0.0" width="172" height="263"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-uv-uH8">
+                            <rect key="frame" x="26" y="119" width="120" height="25"/>
+                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointUp" translatesAutoresizingMaskIntoConstraints="NO" id="xtQ-CM-NpR">
+                            <rect key="frame" x="110" y="12" width="50" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="NTY-P6-2Ct"/>
+                                <constraint firstAttribute="height" constant="100" id="db3-3t-qvo"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="YQy-uv-uH8" firstAttribute="centerY" secondItem="jHO-80-sOS" secondAttribute="centerY" id="3Jx-4D-KB3"/>
+                        <constraint firstItem="YQy-uv-uH8" firstAttribute="centerX" secondItem="jHO-80-sOS" secondAttribute="centerX" id="9sB-9m-erY"/>
+                        <constraint firstAttribute="trailing" secondItem="xtQ-CM-NpR" secondAttribute="trailing" constant="12" id="Ub0-g3-TUx"/>
+                        <constraint firstItem="xtQ-CM-NpR" firstAttribute="top" secondItem="jHO-80-sOS" secondAttribute="top" constant="12" id="lfe-uQ-rlc"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1540.5" y="1231.5"/>
         </scene>
