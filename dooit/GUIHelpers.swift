@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class GUIHelpers {
+    
     static func setUpTitle() -> NSAttributedString {
         let attributedText = NSMutableAttributedString(string: "dooit")
         let color = UIColor.whiteColor()
@@ -21,4 +22,5 @@ class GUIHelpers {
         attributedText.addAttributes(attributeLight, range: NSRange(location: 3, length: 2))
         return attributedText
     }
+    
 }

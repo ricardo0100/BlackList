@@ -20,7 +20,11 @@ class SaveListViewModelTests: XCTestCase {
         super.setUp()
         viewModelDelegate = SaveListViewModelDelegateDouble()
         managedObjectContext = InMemoryCoreDataStack.sharedInstance.managedObjectContext
+    }
+    
+    override func tearDown() {
         InMemoryCoreDataStack.sharedInstance.clearStore()
+        super.tearDown()
     }
     
     func testEntityCreation() {
@@ -67,12 +71,12 @@ class SaveListViewModelDelegateDouble: SaveListViewModelDelegate {
     var errorMessage = ""
     var successMessage = ""
     
-    func showErrorMessage(message: String) {
+    func showSaveListErrorMessage(message: String) {
         showErrorMessageCalled = true
         errorMessage = message
     }
     
-    func showSuccessMessage(message: String) {
+    func showSaveListSuccessMessage(message: String) {
         showSuccessMessageCalled = true
         successMessage = message
     }

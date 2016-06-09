@@ -22,6 +22,11 @@ class MarkItemViewModelTests: XCTestCase {
         list = CoreDataHelpers.createListWithTitle("Build a boat 🚣")
     }
     
+    override func tearDown() {
+        InMemoryCoreDataStack.sharedInstance.clearStore()
+        super.tearDown()
+    }
+    
     func testItemChangedToMarkedStatusTrue() {
         let item = CoreDataHelpers.createItemForList(list!, withTitle: "Make a sandwich", andMarked: false)
         viewModel!.changeMarkedStatusForItem(item)

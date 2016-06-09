@@ -34,9 +34,9 @@ class SaveListViewModel {
     func saveList() {
         do {
             try managedObjectContext.save()
-            delegate.showSuccessMessage(savingSuccessMessage)
+            delegate.showSaveListSuccessMessage(savingSuccessMessage)
         } catch _ as NSError {
-            delegate.showErrorMessage(emptyTitleErrorMessage)
+            delegate.showSaveListErrorMessage(emptyTitleErrorMessage)
         }
     }
     
@@ -44,7 +44,7 @@ class SaveListViewModel {
 
 protocol SaveListViewModelDelegate {
     
-    func showSuccessMessage(message: String)
-    func showErrorMessage(message: String)
+    func showSaveListSuccessMessage(message: String)
+    func showSaveListErrorMessage(message: String)
     
 }

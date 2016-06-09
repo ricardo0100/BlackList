@@ -21,7 +21,11 @@ class ShowListsViewModelTests: XCTestCase {
         viewModelDelegate = ShowListsViewModelDelegateDouble()
         managedObjectContext = InMemoryCoreDataStack.sharedInstance.managedObjectContext
         viewModel = ShowListsViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+    }
+    
+    override func tearDown() {
         InMemoryCoreDataStack.sharedInstance.clearStore()
+        super.tearDown()
     }
     
     func testShouldPresentBlankState() {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class ListsTableViewController: UITableViewController, ShowListsViewModelDelegate, SaveListViewModelDelegate, DeleteListViewModelDelegate {
     
@@ -59,11 +58,11 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
         showListsViewModel = ShowListsViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
     }
     
-    func showSuccessMessage(message: String) {
+    func showSaveListSuccessMessage(message: String) {
         showListsViewModel!.fetchLists()
     }
     
-    func showErrorMessage(message: String) {
+    func showSaveListErrorMessage(message: String) {
         let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(okAction)

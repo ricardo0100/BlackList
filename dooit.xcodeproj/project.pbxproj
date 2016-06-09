@@ -11,6 +11,8 @@
 		BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */; };
 		BA265B7C1D08A97100680627 /* MarkItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */; };
 		BA265B7E1D08AB1D00680627 /* MarkItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */; };
+		BA265B801D08B85500680627 /* SaveItemForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */; };
+		BA265B821D0904A400680627 /* SaveItemForListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B811D0904A400680627 /* SaveItemForListViewModelTests.swift */; };
 		BA34371C1CFE71F200CD99C8 /* DeleteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */; };
 		BA34371E1CFE738500CD99C8 /* DeleteListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */; };
 		BA3437201CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */; };
@@ -50,6 +52,8 @@
 		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkItemViewModel.swift; sourceTree = "<group>"; };
 		BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkItemViewModelTests.swift; sourceTree = "<group>"; };
+		BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveItemForListViewModel.swift; sourceTree = "<group>"; };
+		BA265B811D0904A400680627 /* SaveItemForListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveItemForListViewModelTests.swift; sourceTree = "<group>"; };
 		BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteListViewModel.swift; path = ViewModel/DeleteListViewModel.swift; sourceTree = "<group>"; };
 		BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteListViewModelTests.swift; sourceTree = "<group>"; };
 		BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowItemsForListViewModel.swift; path = ViewModel/ShowItemsForListViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			children = (
 				BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */,
 				BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */,
+				BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			children = (
 				BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */,
 				BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */,
+				BA265B811D0904A400680627 /* SaveItemForListViewModelTests.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 				BAF1AD921CF7E534004EAA23 /* InMemoryCoreDataStack.swift in Sources */,
 				BA3437261CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift in Sources */,
 				BA34371E1CFE738500CD99C8 /* DeleteListViewModelTests.swift in Sources */,
+				BA265B821D0904A400680627 /* SaveItemForListViewModelTests.swift in Sources */,
 				BA265B7E1D08AB1D00680627 /* MarkItemViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +348,7 @@
 			files = (
 				BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */,
 				BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */,
+				BA265B801D08B85500680627 /* SaveItemForListViewModel.swift in Sources */,
 				BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */,
 				BA3437201CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift in Sources */,
 				BAF1ADDB1CFA81CA004EAA23 /* SaveListViewModel.swift in Sources */,

@@ -20,8 +20,12 @@ class DeleteListViewModelTests: XCTestCase {
         super.setUp()
         viewModelDelegate = DeleteListViewModelDelegateDouble()
         managedObjectContext = InMemoryCoreDataStack.sharedInstance.managedObjectContext
-        InMemoryCoreDataStack.sharedInstance.clearStore()
         viewModel = DeleteListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+    }
+    
+    override func tearDown() {
+        InMemoryCoreDataStack.sharedInstance.clearStore()
+        super.tearDown()
     }
     
     func testDeleteListPersistenceStoreSuccess() {

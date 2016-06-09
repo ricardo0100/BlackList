@@ -25,6 +25,11 @@ class ShowItemsForListViewModelTests: XCTestCase {
         
     }
     
+    override func tearDown() {
+        InMemoryCoreDataStack.sharedInstance.clearStore()
+        super.tearDown()
+    }
+    
     func testPresentBlankState() {
         viewModel!.fetchItems()
         XCTAssertTrue(viewModelDelegate!.presentBlankStateCalled)

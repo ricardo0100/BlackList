@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-class ItemsTableViewController: UITableViewController, ShowItemsForListViewModelDelegate, MarkItemViewModelDelegate {
+class ItemsTableViewController: UITableViewController, ShowItemsForListViewModelDelegate, MarkItemViewModelDelegate, SaveItemForListViewModelDelegate {
     
     @IBOutlet var blankStateView: UIView!
     
     var list: List?
     var showItemsForListViewModel: ShowItemsForListViewModel?
     var markItemViewModel: MarkItemViewModel?
+    var saveItemForListViewModel: SaveItemForListViewModel?
     
     // MARK: - UIViewController Lifecycle
 
@@ -25,8 +26,10 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
     }
     
     func setUpViewModel() {
-        showItemsForListViewModel = ShowItemsForListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext, list: list!)
-        markItemViewModel = MarkItemViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
+        let moc = SQLiteCoreDataStack.sharedInstance.managedObjectContext
+        showItemsForListViewModel = ShowItemsForListViewModel(delegate: self, managedObjectContext: moc, list: list!)
+        markItemViewModel = MarkItemViewModel(delegate: self, managedObjectContext: moc)
+        saveItemForListViewModel = SaveItemForListViewModel(delegate: self, managedObjectContext: moc, list: list!)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,6 +75,14 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         tableView.reloadData()
     }
     
+    func showSaveItemSuccessMessage(message: String) {
+        showItemsForListViewModel?.fetchItems()
+    }
+    
+    func showSaveItemErrorMessage(message: String) {
+        
+    }
+    
     // MARK: - Actions
     
     @IBAction func newItemClicked(sender: AnyObject) {
@@ -79,7 +90,7 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         
         let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
             let textField = alert.textFields!.first
-            self.saveItemWithName(textField!.text!)
+            self.saveItemWithTitle(textField!.text!)
             self.tableView.reloadData()
         })
         
@@ -94,20 +105,8 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    func saveItemWithName(title: String) {
-        let moc = SQLiteCoreDataStack.sharedInstance.managedObjectContext
-        let entity =  NSEntityDescription.entityForName("Item", inManagedObjectContext:moc)
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: moc) as! Item
-        
-        item.title = title
-        list!.addItemsObject(item)
-        
-        do {
-            try moc.save()
-            showItemsForListViewModel!.fetchItems()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
+    func saveItemWithTitle(title: String) {
+        saveItemForListViewModel!.saveNewItemWithTitle(title)
     }
     
     func setMarkedTapped(item: Item) {
