@@ -28,28 +28,12 @@ class DeleteListViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testDeleteListPersistenceStoreSuccess() {
-        addListWithName("Find a planet")
-        let list = retrieveListsInStore()[0]
+    func testDeleteListInPersistenceStoreSuccess() {
+        let list = CoreDataHelpers.createListWithTitle("Find a planet")
         viewModel!.deleteList(list)
-        let lists = retrieveListsInStore()
+        let lists = CoreDataHelpers.retrieveAllLists()
         XCTAssertTrue(viewModelDelegate!.deleteListSuccessCallbackCalled)
         XCTAssertEqual(lists.count, 0)
-    }
-    
-    // MARK: - Test Helpers
-    
-    func addListWithName(name: String) {
-        let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext!)
-        let list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext!) as! List
-        list.title = name
-        try! managedObjectContext!.save()
-    }
-    
-    func retrieveListsInStore() -> [List] {
-        let results = try! managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "List"))
-        let lists = results as! [List]
-        return lists
     }
     
 }

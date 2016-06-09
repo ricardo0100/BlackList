@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ItemsTableViewController: UITableViewController, ShowItemsForListViewModelDelegate, MarkItemViewModelDelegate, SaveItemForListViewModelDelegate {
+class ItemsTableViewController: UITableViewController, ShowItemsForListViewModelDelegate, MarkItemViewModelDelegate, SaveItemForListViewModelDelegate, DeleteItemFromListViewModelDelegate {
     
     @IBOutlet var blankStateView: UIView!
     
@@ -17,6 +17,7 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
     var showItemsForListViewModel: ShowItemsForListViewModel?
     var markItemViewModel: MarkItemViewModel?
     var saveItemForListViewModel: SaveItemForListViewModel?
+    var deleteItemFromListViewModel: DeleteItemFromListViewModel?
     
     // MARK: - UIViewController Lifecycle
 
@@ -30,6 +31,7 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         showItemsForListViewModel = ShowItemsForListViewModel(delegate: self, managedObjectContext: moc, list: list!)
         markItemViewModel = MarkItemViewModel(delegate: self, managedObjectContext: moc)
         saveItemForListViewModel = SaveItemForListViewModel(delegate: self, managedObjectContext: moc, list: list!)
+        deleteItemFromListViewModel = DeleteItemFromListViewModel(delegate: self, managedObjectContext: moc, list: list!)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -83,7 +85,26 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         
     }
     
-    // MARK: - Actions
+    func deleteItemFromListSuccessCallback() {
+        
+    }
+    
+    func deleteItemFromListErrorCallback() {
+        
+    }
+    
+    func setMarkedCallBack(item: Item) {
+        let index = showItemsForListViewModel!.items.indexOf(item)
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! ItemTableViewCell
+        cell.marked = true
+        
+    }
+    
+    func setUnmarkedCallBack(item: Item) {
+        let index = showItemsForListViewModel!.items.indexOf(item)
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! ItemTableViewCell
+        cell.marked = false
+    }
     
     @IBAction func newItemClicked(sender: AnyObject) {
         let alert = UIAlertController(title: "New Item", message: "Add a new item", preferredStyle: .Alert)
@@ -113,25 +134,7 @@ class ItemsTableViewController: UITableViewController, ShowItemsForListViewModel
         markItemViewModel!.changeMarkedStatusForItem(item)
     }
     
-    func setMarkedCallBack(item: Item) {
-        let index = showItemsForListViewModel!.items.indexOf(item)
-        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! ItemTableViewCell
-        cell.marked = true
-        
-    }
-    
-    func setUnmarkedCallBack(item: Item) {
-        let index = showItemsForListViewModel!.items.indexOf(item)
-        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! ItemTableViewCell
-        cell.marked = false
-    }
-    
     func deleteItem(item: Item) {
-        SQLiteCoreDataStack.sharedInstance.managedObjectContext.deleteObject(item)
-        do {
-            try SQLiteCoreDataStack.sharedInstance.managedObjectContext.save()
-        } catch let error as NSError  {
-            print("Could not delete \(error), \(error.userInfo)")
-        }
+        deleteItemFromListViewModel!.deleteItem(item)
     }
 }

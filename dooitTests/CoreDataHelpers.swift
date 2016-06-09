@@ -42,6 +42,13 @@ class CoreDataHelpers {
         return item
     }
     
+    static func retrieveAllLists() -> [List] {
+        let moc = InMemoryCoreDataStack.sharedInstance.managedObjectContext
+        let results = try! moc.executeFetchRequest(NSFetchRequest(entityName: "List"))
+        let lists = results as! [List]
+        return lists
+    }
+    
     static func retrieveAllItemsForList(list: List) -> [Item] {
         let moc = InMemoryCoreDataStack.sharedInstance.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Item")
