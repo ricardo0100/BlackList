@@ -13,6 +13,8 @@
 		BA265B7E1D08AB1D00680627 /* MarkItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */; };
 		BA265B801D08B85500680627 /* SaveItemForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */; };
 		BA265B821D0904A400680627 /* SaveItemForListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B811D0904A400680627 /* SaveItemForListViewModelTests.swift */; };
+		BA265B841D09117A00680627 /* DeleteItemFromListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B831D09117A00680627 /* DeleteItemFromListViewModel.swift */; };
+		BA265B861D09120200680627 /* GUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B851D09120200680627 /* GUIHelpers.swift */; };
 		BA34371C1CFE71F200CD99C8 /* DeleteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */; };
 		BA34371E1CFE738500CD99C8 /* DeleteListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */; };
 		BA3437201CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */; };
@@ -32,7 +34,6 @@
 		BAF1ADD11CF9371B004EAA23 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCD1CF9371B004EAA23 /* List.swift */; };
 		BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCE1CF9371B004EAA23 /* Item+CoreDataProperties.swift */; };
 		BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADCF1CF9371B004EAA23 /* Item.swift */; };
-		BAF1ADD61CFA4210004EAA23 /* GUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */; };
 		BAF1ADD91CFA525B004EAA23 /* SaveListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADD71CFA5223004EAA23 /* SaveListViewModelTests.swift */; };
 		BAF1ADDB1CFA81CA004EAA23 /* SaveListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1ADDA1CFA81CA004EAA23 /* SaveListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -50,10 +51,12 @@
 /* Begin PBXFileReference section */
 		BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = View/ItemsTableViewController.swift; sourceTree = "<group>"; };
 		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
-		BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkItemViewModel.swift; sourceTree = "<group>"; };
+		BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkItemViewModel.swift; path = ViewModel/MarkItemViewModel.swift; sourceTree = "<group>"; };
 		BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkItemViewModelTests.swift; sourceTree = "<group>"; };
-		BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveItemForListViewModel.swift; sourceTree = "<group>"; };
+		BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveItemForListViewModel.swift; path = ViewModel/SaveItemForListViewModel.swift; sourceTree = "<group>"; };
 		BA265B811D0904A400680627 /* SaveItemForListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveItemForListViewModelTests.swift; sourceTree = "<group>"; };
+		BA265B831D09117A00680627 /* DeleteItemFromListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteItemFromListViewModel.swift; path = ViewModel/DeleteItemFromListViewModel.swift; sourceTree = "<group>"; };
+		BA265B851D09120200680627 /* GUIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GUIHelpers.swift; path = View/GUIHelpers.swift; sourceTree = "<group>"; };
 		BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteListViewModel.swift; path = ViewModel/DeleteListViewModel.swift; sourceTree = "<group>"; };
 		BA34371D1CFE738500CD99C8 /* DeleteListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteListViewModelTests.swift; sourceTree = "<group>"; };
 		BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowItemsForListViewModel.swift; path = ViewModel/ShowItemsForListViewModel.swift; sourceTree = "<group>"; };
@@ -78,7 +81,6 @@
 		BAF1ADCE1CF9371B004EAA23 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BAF1ADCF1CF9371B004EAA23 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BAF1ADD41CF940E6004EAA23 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
-		BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GUIHelpers.swift; sourceTree = "<group>"; };
 		BAF1ADD71CFA5223004EAA23 /* SaveListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveListViewModelTests.swift; sourceTree = "<group>"; };
 		BAF1ADDA1CFA81CA004EAA23 /* SaveListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveListViewModel.swift; path = ViewModel/SaveListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */,
 				BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */,
 				BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */,
+				BA265B831D09117A00680627 /* DeleteItemFromListViewModel.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
 				BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */,
 				BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */,
-				BAF1ADD51CFA4210004EAA23 /* GUIHelpers.swift */,
+				BA265B851D09120200680627 /* GUIHelpers.swift */,
 				BAB444EB1CE5274F0086BC63 /* Assets.xcassets */,
 			);
 			name = View;
@@ -346,6 +349,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA265B841D09117A00680627 /* DeleteItemFromListViewModel.swift in Sources */,
+				BA265B861D09120200680627 /* GUIHelpers.swift in Sources */,
 				BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */,
 				BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */,
 				BA265B801D08B85500680627 /* SaveItemForListViewModel.swift in Sources */,
@@ -357,7 +362,6 @@
 				BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */,
 				BA265B7C1D08A97100680627 /* MarkItemViewModel.swift in Sources */,
 				BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */,
-				BAF1ADD61CFA4210004EAA23 /* GUIHelpers.swift in Sources */,
 				BAF1ADCB1CF93417004EAA23 /* Model.xcdatamodeld in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
 				BAF1ADD01CF9371B004EAA23 /* List+CoreDataProperties.swift in Sources */,
