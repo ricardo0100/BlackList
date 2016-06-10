@@ -34,14 +34,24 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA5578451CF3EBD3006953F1"
-               BuildableName = "dooitTests.xctest"
-               BlueprintName = "dooitTests"
+               BuildableName = "dooitUnitTests.xctest"
+               BlueprintName = "dooitUnitTests"
                ReferencedContainer = "container:dooit.xcodeproj">
             </BuildableReference>
             <LocationScenarioReference
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
                referenceType = "1">
             </LocationScenarioReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BAC7127D1D0A5BFB00735AD3"
+               BuildableName = "dooitUITests.xctest"
+               BlueprintName = "dooitUITests"
+               ReferencedContainer = "container:dooit.xcodeproj">
+            </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
