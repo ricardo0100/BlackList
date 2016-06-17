@@ -20,6 +20,7 @@
 		BA3437201CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */; };
 		BA3437261CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */; };
 		BA3437281CFFF1B800CD99C8 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */; };
+		BA4218E11D0E40AB00D679CA /* EditListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4218E01D0E40AB00D679CA /* EditListTableViewController.swift */; };
 		BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */; };
 		BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578511CF55981006953F1 /* ShowListsViewModel.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
@@ -71,6 +72,7 @@
 		BA34371F1CFFE8EE00CD99C8 /* ShowItemsForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowItemsForListViewModel.swift; path = ViewModel/ShowItemsForListViewModel.swift; sourceTree = "<group>"; };
 		BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowItemsForListViewModelTests.swift; sourceTree = "<group>"; };
 		BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		BA4218E01D0E40AB00D679CA /* EditListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditListTableViewController.swift; path = View/EditListTableViewController.swift; sourceTree = "<group>"; };
 		BA5578461CF3EBD3006953F1 /* dooitUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dooitUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelTests.swift; sourceTree = "<group>"; };
 		BA55784A1CF3EBD4006953F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +189,15 @@
 			name = Items;
 			sourceTree = "<group>";
 		};
+		BA4218E21D0E40BB00D679CA /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
+				BA4218E01D0E40AB00D679CA /* EditListTableViewController.swift */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
 		BA5578471CF3EBD4006953F1 /* dooitUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +224,7 @@
 			children = (
 				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
 				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
-				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
+				BA4218E21D0E40BB00D679CA /* Lists */,
 				BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */,
 				BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */,
 				BA265B851D09120200680627 /* GUIHelpers.swift */,
@@ -425,6 +436,7 @@
 				BA265B7C1D08A97100680627 /* MarkItemViewModel.swift in Sources */,
 				BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */,
 				BAF1ADCB1CF93417004EAA23 /* Model.xcdatamodeld in Sources */,
+				BA4218E11D0E40AB00D679CA /* EditListTableViewController.swift in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
 				BAF1ADD01CF9371B004EAA23 /* List+CoreDataProperties.swift in Sources */,
 				BAF1ADD11CF9371B004EAA23 /* List.swift in Sources */,
@@ -667,6 +679,7 @@
 				BAC712871D0A5BFB00735AD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

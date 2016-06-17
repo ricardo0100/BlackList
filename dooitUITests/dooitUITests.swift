@@ -30,10 +30,6 @@ class dooitUITests: XCTestCase {
     
     func testX() {
         
-        let app = XCUIApplication()
-        app.navigationBars["Lists"].buttons["New list"].tap()
-        app.alerts["New List"].collectionViews.buttons["Cancel"].tap()
-        
     }
     
 }

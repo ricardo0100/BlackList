@@ -105,30 +105,6 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
         }
     }
     
-    // MARK: - Actions
-
-    @IBAction func addName(sender: AnyObject) {
-        let alert = UIAlertController(title: "New List", message: "Add a new list name", preferredStyle: .Alert)
-        let saveAction = UIAlertAction(title: "Save", style: .Default, handler: { (action:UIAlertAction) -> Void in
-            let textField = alert.textFields!.first
-            self.saveListWithTitle(textField!.text!)
-            self.tableView.reloadData()
-        })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
-        alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField) -> Void in
-        }
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func saveListWithTitle(title: String) {
-        let saveListViewModel = SaveListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
-        saveListViewModel.list.title = title
-        saveListViewModel.saveList()
-    }
-    
     func deleteList(list: List) {
         let deleteListViewModel = DeleteListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
         deleteListViewModel.deleteList(list)

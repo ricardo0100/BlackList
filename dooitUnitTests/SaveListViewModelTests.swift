@@ -62,6 +62,22 @@ class SaveListViewModelTests: XCTestCase {
         XCTAssertEqual(lists.count, 1)
     }
     
+    func testCancelEditingNewList() {
+        viewModel = SaveListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!)
+        viewModel!.list.title = "Go to Japan"
+        viewModel!.cancelEditing()
+        let lists = CoreDataHelpers.retrieveAllLists()
+        XCTAssertEqual(lists.count, 0)
+    }
+    
+    func testCancelEditingExistingList() {
+        let list = CoreDataHelpers.createListWithTitle("Make a music")
+        viewModel = SaveListViewModel(delegate: viewModelDelegate!, managedObjectContext: managedObjectContext!, list: list)
+        viewModel!.cancelEditing()
+        let lists = CoreDataHelpers.retrieveAllLists()
+        XCTAssertEqual(lists.count, 1)
+    }
+    
 }
 
 class SaveListViewModelDelegateDouble: SaveListViewModelDelegate {

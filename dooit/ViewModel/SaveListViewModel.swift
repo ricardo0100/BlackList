@@ -3,7 +3,7 @@
 //  dooit
 //
 //  Created by Ricardo Gehrke Filho on 28/05/16.
-//  Copyright © 2016 Ricardo Gehrke Filho. All rights reserved.
+//  Copyright © 2016 Ricardo Gehrke Filho. All rights reserved.11
 //
 
 import Foundation
@@ -38,6 +38,10 @@ class SaveListViewModel {
         } catch _ as NSError {
             delegate.showSaveListErrorMessage(emptyTitleErrorMessage)
         }
+    }
+    
+    func cancelEditing() {
+        managedObjectContext.reset()
     }
     
 }
