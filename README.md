@@ -36,6 +36,13 @@ Codecov for test coverage analysis
 
 Code Climate for code quality
 
+### Future
+
+- [ ] UI improvements for iPad
+- [ ] Animations
+- [ ] Custom colors defined by the user
+- [ ] Alarms
+- [ ] Integration with REST API
 
 ### Data Model
 
