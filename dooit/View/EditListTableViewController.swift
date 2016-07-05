@@ -52,9 +52,11 @@ class EditListTableViewController: UIViewController, EditListViewModelDelegate {
     
     func cancelEditingCallBack() {
         dismissViewControllerAnimated(true, completion: nil)
+        dismissCallback()
     }
     
     func presentExistingListForEditing() {
+        print(list!.title)
         listTitleTextField.text = list!.title
     }
 }
