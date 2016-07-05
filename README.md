@@ -6,13 +6,40 @@
 
 ### What is this?
 
-### Project Structure
+This is a MVVM based project used for practicing iOS development including the following concepts:
+- Core Data
+- Presentation Controllers
+- Unit Testing
+- UI Testing
+- Auto Layout
+- Size Classes
+- UIKit
+- Publication in App Store
 
-### Technologies
+The app goal is to be a simple, but awesome, to do list app.
+
+### Project Structure
+- Model: Data model and some data rules validation
+- ViewModel: Business rules
+- View: View Controllers and Views
 
 ### Tests and CI
 
+All the business rules are contained in the ViewModel layer and unit tested. The View layer is going to be test covered by the XCode UI Tests.
+
+🎯The goal is 100% test coverage
+
+Travis CI is used for Continuous Integration
+
+Codecov for test coverage analysis
+
+Code Climate for code quality
+
+
 ### Data Model
+
+Core Data is used for persistence and migrations. The model evolution is represented bellow:
+
 ##### Version 1
 - List
   - __title__: String
