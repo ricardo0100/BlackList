@@ -19,9 +19,10 @@ This is a MVVM based project used for practicing iOS development including the f
 The app goal is to be a simple, but awesome, to do list app.
 
 ### Project Structure
-- Model: Data model and some data rules validation
-- ViewModel: Business rules
-- View: View Controllers and Views
+- **Model**: Data model and some data rules validation
+- **ViewModel**: Business rules
+- **View**: View Controllers and Views
+- **Dependency manager**: For now I'm trying not to use external libraries so I can learn the core concepts. But I'll probably have to use CocoaPods or Carthage soon
 
 ### Tests and CI
 
