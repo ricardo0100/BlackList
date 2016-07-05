@@ -43,16 +43,6 @@
                referenceType = "1">
             </LocationScenarioReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BAC7127D1D0A5BFB00735AD3"
-               BuildableName = "dooitUITests.xctest"
-               BlueprintName = "dooitUITests"
-               ReferencedContainer = "container:dooit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

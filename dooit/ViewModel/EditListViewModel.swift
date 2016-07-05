@@ -1,34 +1,35 @@
 //
-//  SaveListViewModel.swift
+//  EditListViewModel.swift
 //  dooit
 //
 //  Created by Ricardo Gehrke Filho on 28/05/16.
-//  Copyright © 2016 Ricardo Gehrke Filho. All rights reserved.11
+//  Copyright © 2016 Ricardo Gehrke Filho. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-class SaveListViewModel {
+class EditListViewModel {
     
     let emptyTitleErrorMessage = "You must provide a title for the list"
     let savingSuccessMessage = "List saved"
     
-    var delegate: SaveListViewModelDelegate
+    var delegate: EditListViewModelDelegate
     var managedObjectContext: NSManagedObjectContext
     var list: List
     
-    init (delegate: SaveListViewModelDelegate, managedObjectContext: NSManagedObjectContext) {
+    init (delegate: EditListViewModelDelegate, managedObjectContext: NSManagedObjectContext) {
         self.delegate = delegate
         self.managedObjectContext = managedObjectContext
         let entity =  NSEntityDescription.entityForName("List", inManagedObjectContext:managedObjectContext)
         list = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! List
     }
     
-    init (delegate: SaveListViewModelDelegate, managedObjectContext: NSManagedObjectContext, list: List) {
+    init (delegate: EditListViewModelDelegate, managedObjectContext: NSManagedObjectContext, list: List) {
         self.delegate = delegate
         self.managedObjectContext = managedObjectContext
         self.list = list
+        delegate.presentExistingListForEditing()
     }
     
     func saveList() {
@@ -42,13 +43,16 @@ class SaveListViewModel {
     
     func cancelEditing() {
         managedObjectContext.reset()
+        delegate.cancelEditingCallBack()
     }
     
 }
 
-protocol SaveListViewModelDelegate {
+protocol EditListViewModelDelegate {
     
     func showSaveListSuccessMessage(message: String)
     func showSaveListErrorMessage(message: String)
+    func presentExistingListForEditing()
+    func cancelEditingCallBack()
     
 }

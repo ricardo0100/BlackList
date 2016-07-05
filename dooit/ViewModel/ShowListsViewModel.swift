@@ -32,7 +32,7 @@ class ShowListsViewModel {
         }
     }
     
-    func presentLists() {
+    private func presentLists() {
         if lists.count == 0 {
             delegate.showBlankstate()
         } else {

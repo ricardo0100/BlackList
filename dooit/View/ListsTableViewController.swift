@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListsTableViewController: UITableViewController, ShowListsViewModelDelegate, SaveListViewModelDelegate, DeleteListViewModelDelegate {
+class ListsTableViewController: UITableViewController, ShowListsViewModelDelegate, DeleteListViewModelDelegate {
     
     @IBOutlet var blankStateView: UIView!
     var showListsViewModel: ShowListsViewModel?
@@ -32,6 +32,18 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
             let list = showListsViewModel!.lists[tableView.indexPathForSelectedRow!.row]
             itemsViewController.title = list.title
             itemsViewController.list = list
+        } else if segue.identifier == "Edit Existing List" {
+            let editListNavigationController = segue.destinationViewController as! UINavigationController
+            let editListViewController = editListNavigationController.topViewController as! EditListTableViewController
+            editListViewController.dismissCallback = showListsViewModel!.fetchLists
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let list = showListsViewModel!.lists[indexPath!.row]
+            editListViewController.list = list
+        } else if segue.identifier == "New List" {
+            let editListNavigationController = segue.destinationViewController as! UINavigationController
+            let editListViewController = editListNavigationController.topViewController as! EditListTableViewController
+            editListViewController.dismissCallback = showListsViewModel!.fetchLists
         }
     }
     
@@ -56,17 +68,6 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
     
     func setUpViewModel() {
         showListsViewModel = ShowListsViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
-    }
-    
-    func showSaveListSuccessMessage(message: String) {
-        showListsViewModel!.fetchLists()
-    }
-    
-    func showSaveListErrorMessage(message: String) {
-        let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-        alert.addAction(okAction)
-        presentViewController(alert, animated: true, completion: nil)
     }
     
     func deleteListSuccessCallback() {
@@ -98,11 +99,16 @@ class ListsTableViewController: UITableViewController, ShowListsViewModelDelegat
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            let list = showListsViewModel!.lists[indexPath.row]
-            deleteList(list)
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
+            let list = self.showListsViewModel!.lists[indexPath.row]
+            self.deleteList(list)
         }
+        let editAction = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath) in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            self.performSegueWithIdentifier("Edit Existing List", sender: cell)
+        }
+        return [deleteAction, editAction]
     }
     
     func deleteList(list: List) {

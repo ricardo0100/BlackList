@@ -8,36 +8,39 @@
 
 import UIKit
 
-class EditListTableViewController: UITableViewController, SaveListViewModelDelegate {
+class EditListTableViewController: UIViewController, EditListViewModelDelegate {
 
-    var saveListViewModel: SaveListViewModel!
+    var list: List?
+    var editListViewModel: EditListViewModel!
+    var dismissCallback: ((Void) -> Void)!
     
     @IBOutlet weak var listTitleTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews()
         setUpViewModel()
     }
     
-    func setUpViews() {
-    }
-    
     func setUpViewModel() {
-        saveListViewModel = SaveListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
+        if let existingList = list {
+            editListViewModel = EditListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext, list: existingList)
+        } else {
+            editListViewModel = EditListViewModel(delegate: self, managedObjectContext: SQLiteCoreDataStack.sharedInstance.managedObjectContext)
+        }
     }
     
     @IBAction func saveList(sender: AnyObject) {
-        saveListViewModel.list.title = listTitleTextField.text
-        saveListViewModel.saveList()
+        editListViewModel.list.title = listTitleTextField.text
+        editListViewModel.saveList()
     }
     
     @IBAction func cancelEditing(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        editListViewModel.cancelEditing()
     }
     
     func showSaveListSuccessMessage(message: String) {
         dismissViewControllerAnimated(true, completion: nil)
+        dismissCallback()
     }
     
     func showSaveListErrorMessage(message: String) {
@@ -47,4 +50,11 @@ class EditListTableViewController: UITableViewController, SaveListViewModelDeleg
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    func cancelEditingCallBack() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func presentExistingListForEditing() {
+        listTitleTextField.text = list!.title
+    }
 }
