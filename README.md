@@ -14,7 +14,7 @@ This is a MVVM based project used for practicing iOS development including the f
 - Auto Layout
 - Size Classes
 - UIKit
-- Publication in App Store
+- Publication in App Store including TestFlight
 
 The app goal is to be a simple, but awesome, to do list app.
 
@@ -27,7 +27,7 @@ The app goal is to be a simple, but awesome, to do list app.
 
 All the business rules are contained in the ViewModel layer and unit tested. The View layer is going to be test covered by the XCode UI Tests.
 
-🎯The goal is 100% test coverage
+The goal is 100% test coverage 🎯
 
 Travis CI is used for Continuous Integration
 
