@@ -20,12 +20,12 @@ class ShowAsPopoverSegue: UIStoryboardSegue, UIViewControllerTransitioningDelega
         return CustomPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
-//    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return CustomPresentationAnimationController(isPresenting: true)
-//    }
-//    
-//    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return CustomPresentationAnimationController(isPresenting: false)
-//    }
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomPresentationAnimationController(isPresenting: true)
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomPresentationAnimationController(isPresenting: false)
+    }
     
 }

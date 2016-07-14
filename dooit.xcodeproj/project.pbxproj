@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA059F6D1D3713FA00DF5998 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA059F6C1D3713FA00DF5998 /* LaunchScreen.storyboard */; };
 		BA1AEE381CED70B6004615D1 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */; };
 		BA1AEE3A1CED70EB004615D1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */; };
+		BA21A1271D370A0500D6B2B2 /* ShowWithFadeAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21A1261D370A0500D6B2B2 /* ShowWithFadeAnimationSegue.swift */; };
+		BA21A1291D370A7E00D6B2B2 /* FadePresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21A1281D370A7E00D6B2B2 /* FadePresentationAnimationController.swift */; };
 		BA265B7C1D08A97100680627 /* MarkItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */; };
 		BA265B7E1D08AB1D00680627 /* MarkItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */; };
 		BA265B801D08B85500680627 /* SaveItemForListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */; };
@@ -25,13 +28,13 @@
 		BA3437261CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */; };
 		BA3437281CFFF1B800CD99C8 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */; };
 		BA4218E11D0E40AB00D679CA /* EditListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4218E01D0E40AB00D679CA /* EditListTableViewController.swift */; };
+		BA546B5D1D347688009251A4 /* AnimatedLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA546B5C1D347688009251A4 /* AnimatedLaunchScreenViewController.swift */; };
 		BA5578491CF3EBD4006953F1 /* ShowListsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */; };
 		BA5578521CF55981006953F1 /* ShowListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5578511CF55981006953F1 /* ShowListsViewModel.swift */; };
 		BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E11CE5274F0086BC63 /* AppDelegate.swift */; };
 		BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */; };
 		BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444E51CE5274F0086BC63 /* Main.storyboard */; };
 		BAB444EC1CE5274F0086BC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB444EB1CE5274F0086BC63 /* Assets.xcassets */; };
-		BAB444EF1CE5274F0086BC63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */; };
 		BAC712761D09D34900735AD3 /* DeleteItemFromListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC712751D09D34900735AD3 /* DeleteItemFromListViewModelTests.swift */; };
 		BAC712811D0A5BFB00735AD3 /* dooitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC712801D0A5BFB00735AD3 /* dooitUITests.swift */; };
 		BAF1AD8F1CF7E338004EAA23 /* SQLiteCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1AD8E1CF7E338004EAA23 /* SQLiteCoreDataStack.swift */; };
@@ -63,16 +66,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA059F6C1D3713FA00DF5998 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = View/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA1AEE371CED70B6004615D1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = View/ItemsTableViewController.swift; sourceTree = "<group>"; };
 		BA1AEE391CED70EB004615D1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = View/ItemTableViewCell.swift; sourceTree = "<group>"; };
+		BA21A1261D370A0500D6B2B2 /* ShowWithFadeAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowWithFadeAnimationSegue.swift; path = dooit/View/ShowWithFadeAnimationSegue.swift; sourceTree = SOURCE_ROOT; };
+		BA21A1281D370A7E00D6B2B2 /* FadePresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadePresentationAnimationController.swift; path = dooit/View/FadePresentationAnimationController.swift; sourceTree = SOURCE_ROOT; };
 		BA265B7B1D08A97100680627 /* MarkItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkItemViewModel.swift; path = ViewModel/MarkItemViewModel.swift; sourceTree = "<group>"; };
 		BA265B7D1D08AB1D00680627 /* MarkItemViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkItemViewModelTests.swift; sourceTree = "<group>"; };
 		BA265B7F1D08B85500680627 /* SaveItemForListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveItemForListViewModel.swift; path = ViewModel/SaveItemForListViewModel.swift; sourceTree = "<group>"; };
 		BA265B811D0904A400680627 /* SaveItemForListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveItemForListViewModelTests.swift; sourceTree = "<group>"; };
 		BA265B831D09117A00680627 /* DeleteItemFromListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteItemFromListViewModel.swift; path = ViewModel/DeleteItemFromListViewModel.swift; sourceTree = "<group>"; };
-		BA3311C11D2568110015B7EF /* ShowAsPopoverSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAsPopoverSegue.swift; sourceTree = "<group>"; };
-		BA3311C31D25683D0015B7EF /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
-		BA3311C41D25683D0015B7EF /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
+		BA3311C11D2568110015B7EF /* ShowAsPopoverSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowAsPopoverSegue.swift; path = ../../ShowAsPopoverSegue.swift; sourceTree = "<group>"; };
+		BA3311C31D25683D0015B7EF /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentationController.swift; path = ../../CustomPresentationController.swift; sourceTree = "<group>"; };
+		BA3311C41D25683D0015B7EF /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentationAnimationController.swift; path = ../../CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
 		BA3311CA1D2579B20015B7EF /* GUIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GUIHelpers.swift; sourceTree = "<group>"; };
 		BA3311CB1D2579B20015B7EF /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BA34371B1CFE71F200CD99C8 /* DeleteListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteListViewModel.swift; path = ViewModel/DeleteListViewModel.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 		BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowItemsForListViewModelTests.swift; sourceTree = "<group>"; };
 		BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		BA4218E01D0E40AB00D679CA /* EditListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditListTableViewController.swift; path = View/EditListTableViewController.swift; sourceTree = "<group>"; };
+		BA546B5C1D347688009251A4 /* AnimatedLaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedLaunchScreenViewController.swift; path = ../AnimatedLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		BA5578461CF3EBD3006953F1 /* dooitUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dooitUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelTests.swift; sourceTree = "<group>"; };
 		BA55784A1CF3EBD4006953F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,7 +97,6 @@
 		BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListsTableViewController.swift; path = View/ListsTableViewController.swift; sourceTree = "<group>"; };
 		BAB444E61CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAB444EB1CE5274F0086BC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = View/Assets.xcassets; sourceTree = "<group>"; };
-		BAB444EE1CE5274F0086BC63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAB444F01CE5274F0086BC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC712751D09D34900735AD3 /* DeleteItemFromListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteItemFromListViewModelTests.swift; sourceTree = "<group>"; };
 		BAC7127E1D0A5BFB00735AD3 /* dooitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dooitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +148,16 @@
 			name = Items;
 			sourceTree = "<group>";
 		};
+		BA21A1251D37054800D6B2B2 /* PopoverViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BA3311C11D2568110015B7EF /* ShowAsPopoverSegue.swift */,
+				BA3311C31D25683D0015B7EF /* CustomPresentationController.swift */,
+				BA3311C41D25683D0015B7EF /* CustomPresentationAnimationController.swift */,
+			);
+			name = PopoverViewController;
+			sourceTree = "<group>";
+		};
 		BA2299281CF30A030044A6D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +183,12 @@
 		BA3311C71D256A5D0015B7EF /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				BA21A1251D37054800D6B2B2 /* PopoverViewController */,
+				BA546B5C1D347688009251A4 /* AnimatedLaunchScreenViewController.swift */,
 				BA3311CA1D2579B20015B7EF /* GUIHelpers.swift */,
 				BA3311CB1D2579B20015B7EF /* RoundedButton.swift */,
+				BA21A1261D370A0500D6B2B2 /* ShowWithFadeAnimationSegue.swift */,
+				BA21A1281D370A7E00D6B2B2 /* FadePresentationAnimationController.swift */,
 			);
 			name = "Custom UI";
 			path = "View/Custom UI";
@@ -221,9 +241,6 @@
 			children = (
 				BAB444E31CE5274F0086BC63 /* ListsTableViewController.swift */,
 				BA4218E01D0E40AB00D679CA /* EditListTableViewController.swift */,
-				BA3311C11D2568110015B7EF /* ShowAsPopoverSegue.swift */,
-				BA3311C31D25683D0015B7EF /* CustomPresentationController.swift */,
-				BA3311C41D25683D0015B7EF /* CustomPresentationAnimationController.swift */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -253,11 +270,11 @@
 			isa = PBXGroup;
 			children = (
 				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
-				BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */,
 				BA4218E21D0E40BB00D679CA /* Lists */,
 				BA121A871D1B04D100B339B6 /* Items */,
 				BA3311C71D256A5D0015B7EF /* Custom UI */,
 				BAB444EB1CE5274F0086BC63 /* Assets.xcassets */,
+				BA059F6C1D3713FA00DF5998 /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -375,6 +392,7 @@
 					};
 					BAB444DD1CE5274E0086BC63 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2T9EKFYB5P;
 					};
 					BAC7127D1D0A5BFB00735AD3 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -415,7 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB444EF1CE5274F0086BC63 /* LaunchScreen.storyboard in Resources */,
+				BA059F6D1D3713FA00DF5998 /* LaunchScreen.storyboard in Resources */,
 				BAB444EC1CE5274F0086BC63 /* Assets.xcassets in Resources */,
 				BAB444E71CE5274F0086BC63 /* Main.storyboard in Resources */,
 			);
@@ -465,11 +483,14 @@
 				BAF1ADD21CF9371B004EAA23 /* Item+CoreDataProperties.swift in Sources */,
 				BA3311C61D25683D0015B7EF /* CustomPresentationAnimationController.swift in Sources */,
 				BAB444E41CE5274F0086BC63 /* ListsTableViewController.swift in Sources */,
+				BA21A1291D370A7E00D6B2B2 /* FadePresentationAnimationController.swift in Sources */,
 				BA265B7C1D08A97100680627 /* MarkItemViewModel.swift in Sources */,
+				BA546B5D1D347688009251A4 /* AnimatedLaunchScreenViewController.swift in Sources */,
 				BAF1ADD31CF9371B004EAA23 /* Item.swift in Sources */,
 				BA3311C51D25683D0015B7EF /* CustomPresentationController.swift in Sources */,
 				BAF1ADCB1CF93417004EAA23 /* Model.xcdatamodeld in Sources */,
 				BA4218E11D0E40AB00D679CA /* EditListTableViewController.swift in Sources */,
+				BA21A1271D370A0500D6B2B2 /* ShowWithFadeAnimationSegue.swift in Sources */,
 				BAB444E21CE5274F0086BC63 /* AppDelegate.swift in Sources */,
 				BAF1ADD01CF9371B004EAA23 /* List+CoreDataProperties.swift in Sources */,
 				BAF1ADD11CF9371B004EAA23 /* List.swift in Sources */,
@@ -507,15 +528,6 @@
 				BAB444E61CE5274F0086BC63 /* Base */,
 			);
 			name = Main.storyboard;
-			path = View;
-			sourceTree = "<group>";
-		};
-		BAB444ED1CE5274F0086BC63 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAB444EE1CE5274F0086BC63 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -634,10 +646,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/dooit/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.dooit;
 				PRODUCT_NAME = dooit;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -646,10 +660,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/dooit/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ricardo0100.dooit;
 				PRODUCT_NAME = dooit;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

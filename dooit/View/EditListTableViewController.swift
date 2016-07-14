@@ -56,7 +56,6 @@ class EditListTableViewController: UIViewController, EditListViewModelDelegate {
     }
     
     func presentExistingListForEditing() {
-        print(list!.title)
         listTitleTextField.text = list!.title
     }
 }
