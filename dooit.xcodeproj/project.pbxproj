@@ -87,7 +87,7 @@
 		BA3437251CFFE9A900CD99C8 /* ShowItemsForListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowItemsForListViewModelTests.swift; sourceTree = "<group>"; };
 		BA3437271CFFF1B800CD99C8 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		BA4218E01D0E40AB00D679CA /* EditListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditListTableViewController.swift; path = View/EditListTableViewController.swift; sourceTree = "<group>"; };
-		BA546B5C1D347688009251A4 /* AnimatedLaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedLaunchScreenViewController.swift; path = ../AnimatedLaunchScreenViewController.swift; sourceTree = "<group>"; };
+		BA546B5C1D347688009251A4 /* AnimatedLaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedLaunchScreenViewController.swift; path = View/AnimatedLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		BA5578461CF3EBD3006953F1 /* dooitUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dooitUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5578481CF3EBD4006953F1 /* ShowListsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListsViewModelTests.swift; sourceTree = "<group>"; };
 		BA55784A1CF3EBD4006953F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA059F6E1D371C2200DF5998 /* FadeTransition */ = {
+			isa = PBXGroup;
+			children = (
+				BA21A1261D370A0500D6B2B2 /* ShowWithFadeAnimationSegue.swift */,
+				BA21A1281D370A7E00D6B2B2 /* FadePresentationAnimationController.swift */,
+			);
+			name = FadeTransition;
+			sourceTree = "<group>";
+		};
 		BA121A871D1B04D100B339B6 /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,11 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				BA21A1251D37054800D6B2B2 /* PopoverViewController */,
-				BA546B5C1D347688009251A4 /* AnimatedLaunchScreenViewController.swift */,
+				BA059F6E1D371C2200DF5998 /* FadeTransition */,
 				BA3311CA1D2579B20015B7EF /* GUIHelpers.swift */,
 				BA3311CB1D2579B20015B7EF /* RoundedButton.swift */,
-				BA21A1261D370A0500D6B2B2 /* ShowWithFadeAnimationSegue.swift */,
-				BA21A1281D370A7E00D6B2B2 /* FadePresentationAnimationController.swift */,
 			);
 			name = "Custom UI";
 			path = "View/Custom UI";
@@ -269,12 +276,13 @@
 		BA55785D1CF67FEC006953F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
 				BA4218E21D0E40BB00D679CA /* Lists */,
 				BA121A871D1B04D100B339B6 /* Items */,
 				BA3311C71D256A5D0015B7EF /* Custom UI */,
 				BAB444EB1CE5274F0086BC63 /* Assets.xcassets */,
+				BAB444E51CE5274F0086BC63 /* Main.storyboard */,
 				BA059F6C1D3713FA00DF5998 /* LaunchScreen.storyboard */,
+				BA546B5C1D347688009251A4 /* AnimatedLaunchScreenViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
